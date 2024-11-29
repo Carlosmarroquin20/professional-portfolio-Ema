@@ -1,0 +1,48 @@
+---
+const CERTIFICATIONS = [
+  {
+    title: "Certificación en SCRUM",
+    image: "/public/Certifications/Scrum.webp",
+    description: "Gestión ágil de proyectos y colaboración en equipos multidisciplinarios.",
+  },
+  {
+    title: "Certificación en estructuras de datos",
+    image: "/public/Certifications/JLDS.webp",
+    description: "Dominio de fundamentos de JavaScript, algoritmos y estructuras de datos esenciales.",
+  },
+  {
+    title: "Certificación en fundamentos de Git",
+    image: "/public/Certifications/Gitt.webp",
+    description: "Gestión eficiente de versiones y colaboración en proyectos con Git.",
+  },
+  {
+    title: "Certificación en JavaScript Intermedio",
+    image: "/public/Certifications/JsI.webp",
+    description: "Desarrollo de habilidades avanzadas en JavaScript para crear aplicaciones dinámicas y escalables.",
+  },
+  {
+    title: "Certificación en Inglés Nivel C1.2 (Avanzado)",
+    image: "/public/Certifications/TOEFL.webp",
+    description: "Dominio avanzado del idioma inglés, enfocado en habilidades de comunicación efectiva en contextos profesionales y académicos.",
+  },
+];
+---
+
+<section id="certificaciones" class="py-16">
+  <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    {CERTIFICATIONS.map(({ title, image, description }) => (
+      <div class="flex flex-col items-center p-6 space-y-6 transition transform bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-2xl hover:-translate-y-2 dark:bg-gray-800 dark:border-gray-700">
+        <div class="w-full h-48 overflow-hidden rounded-lg shadow-sm">
+          <img
+            src={image}
+            alt={`Certificación: ${title}`}
+            class="object-cover w-full h-full"
+            loading="lazy"
+          />
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 dark:text-white text-center">{title}</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 text-center">{description}</p>
+      </div>
+    ))}
+  </div>
+</section>

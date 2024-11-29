@@ -1,0 +1,72 @@
+---
+const personalImageAlt = "Emanuel Marroquín";
+import Badge from "@/components/Badge.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import DownloadIcon from "@/components/icons/Download.astro";
+import SocialPill from "@/components/SocialPill.astro";
+---
+
+<div id="inicio" class="max-w-xl"> 
+  <div class="flex gap-4 mb-4">
+    <img
+      class="rounded-full shadow-lg size-16"
+      src="/Ema.webp"
+      alt={personalImageAlt}
+    />
+    <Badge>Disponible para trabajar</Badge>
+  </div>
+  <h1
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+  >
+    Hey, soy Ema
+  </h1>
+  <p
+    class="mt-4 text-lg text-gray-700 dark:text-gray-300 [&>strong]:text-blue-500 [&>strong]:font-semibold"
+  >
+    Ingeniero en Sistemas y <strong>Desarrollador Full-Stack</strong> apasionado por crear soluciones innovadoras que transformen ideas en resultados concretos.
+  </p>
+  <p
+    class="mt-2 text-lg text-gray-700 dark:text-gray-400 [&>strong]:text-yellow-500"
+  >
+    Mi enfoque está en desarrollar <strong>aplicaciones modernas y escalables</strong>, resolviendo desafíos complejos con creatividad y precisión.
+  </p>
+  <nav class="flex flex-wrap gap-4 mt-6">
+    <SocialPill href="mailto:carlosema322@gmail.com">
+      <MailIcon class="size-4" />
+      Contáctame
+    </SocialPill>
+    <SocialPill href="https://www.linkedin.com/in/emanuel-marroquin-160488321/">
+      <LinkedInIcon class="size-4" />
+      LinkedIn
+    </SocialPill>
+    <SocialPill href="/CV-Emanuel-Marroquin.pdf" download>
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="size-4"
+        style="transition: stroke 0.3s ease;"
+        onmouseover="this.style.stroke='black';"
+        onmouseout="this.style.stroke='white';"
+      >
+        <path
+          opacity="0.5"
+          d="M3 15C3 17.8284 3 19.2426 3.87868 20.1213C4.75736 21 6.17157 21 9 21H15C17.8284 21 19.2426 21 20.1213 20.1213C21 19.2426 21 17.8284 21 15"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+        <path
+          d="M12 3V16M12 16L16 11.625M12 16L8 11.625"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+      Descargar CV
+    </SocialPill>
+  </nav>
+</div>

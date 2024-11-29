@@ -1,0 +1,41 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    date: "2019 - 2020",
+    title: "Especialista en Diseño Publicitario y Producción Multimedia",
+    company: "Freelance",
+    description:
+      "Creación de material gráfico y videos publicitarios utilizando herramientas de diseño multimedia como Photoshop. Enfoque en la comunicación visual efectiva para campañas comerciales.",
+  },
+  {
+    date: "2021 - 2022",
+    title: "Coordinador de Tecnología y Producción Audiovisual",
+    company: "Unción TV (Canal Cristiano)",
+    description:
+      "Gestión integral del área tecnológica del canal. Supervisión de cámaras, sistemas de transmisión y software audiovisual. Desarrollo y ejecución de contenido publicitario para medios digitales y televisión.",
+  },
+  {
+    date: "2023 - 2024",
+    title: "Instructor de Programación y Tecnologías Computacionales",
+    company: "Liceo Nuevo Milenio",
+    description:
+      "Impartición de clases de programación y computación, diseñando planes de estudio efectivos. Orientación al aprendizaje práctico mediante proyectos académicos enfocados en lógica de programación y desarrollo de software.",
+  },
+  {
+    date: "Actualmente...",
+    title: "Desarrollador Freelance - Sistema de Gestión de Lotificaciones",
+    company: "Freelance",
+    description:
+      "Diseño e implementación de un sistema integral para la gestión de lotificaciones. Desarrollo backend con Node.js y base de datos MongoDB, junto con un frontend responsivo en React. Gestión completa del ciclo de vida del software.",
+  },
+];
+---
+
+<ol class="relative mt-16">
+  {EXPERIENCE.map((experience) => (
+    <li class="">
+      <ExperienceItem {...experience} />
+    </li>
+  ))}
+</ol>

@@ -1,0 +1,144 @@
+---
+import GitHub from "./icons/GitHub.astro";
+import ReactIcon from "./icons/React.astro";
+import NodeIcon from "./icons/Node.astro";
+import MongoDBIcon from "./icons/MongoDB.astro";
+import PostgreSQLIcon from "./icons/PostgreSQL.astro";
+import FirebaseIcon from "./icons/FirebaseIcon.astro";
+import RedisIcon from "./icons/RedisIcon.astro";
+import DockerIcon from "./icons/DockerIcon.astro";
+import ExpressIcon from "./icons/Express.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+
+const TAGS = {
+  REACT: {
+    name: "React",
+    class: "bg-blue-500 text-white",
+    icon: ReactIcon,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  NODE: {
+    name: "Node.js",
+    class: "bg-green-600 text-white",
+    icon: NodeIcon,
+  },
+  MONGODB: {
+    name: "MongoDB",
+    class: "bg-green-800 text-white",
+    icon: MongoDBIcon,
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-blue-700 text-white",
+    icon: PostgreSQLIcon,
+  },
+  FIREBASE: {
+    name: "Firebase",
+    class: "bg-yellow-500 text-white",
+    icon: FirebaseIcon,
+  },
+  REDIS: {
+    name: "Redis",
+    class: "bg-red-500 text-white",
+    icon: RedisIcon,
+  },
+  DOCKER: {
+    name: "Docker",
+    class: "bg-blue-600 text-white",
+    icon: DockerIcon,
+  },
+  EXPRESS: {
+    name: "Express.js",
+    class: "bg-gray-700 text-white",
+    icon: ExpressIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Distribuidora Agrícola Sandoval",
+    description:
+      "Plataforma para la automatización de pedidos, incluyendo carrito de compras, autenticación y calificaciones. Desarrollada con React, Node.js, Express y MongoDB. Implementada con metodología Scrum y hospedada en Render.",
+    link: "https://pg-das-frontend.onrender.com/",
+    github: "https://github.com/Carlosmarroquin20/PG_DAS.git",
+    image: "/projects/dascommerce.webp",
+    tags: [TAGS.REACT, TAGS.NODE, TAGS.EXPRESS, TAGS.MONGODB, TAGS.DOCKER],
+  },
+  {
+    title: "Textractify",
+    description:
+      "Aplicación para el reconocimiento de imágenes y generación de descripciones en inglés y español utilizando inteligencia artificial. Desarrollada con React, Node.js, MongoDB y Firebase. Implementada en Render.",
+    link: "https://textractify.render.com",
+    github: "https://github.com/Frnn4268/textractify-hugging-face.git",
+    image: "/projects/textractify.webp",
+    tags: [TAGS.REACT, TAGS.NODE, TAGS.MONGODB, TAGS.FIREBASE],
+  },
+  {
+    title: "GateMaster",
+    description:
+      "Sistema ERP y CRM con autenticación Single Sign-On (SSO) y control de acceso basado en roles (RBAC), utilizando Keycloak, PostgreSQL, Redis, Docker, React y Node.js.",
+    link: "https://app.gatemaster.online/",
+    github: "https://github.com/Seminario24/GateMaster-WebApp.git",
+    image: "/projects/gatemaster.webp",
+    tags: [TAGS.REACT, TAGS.NODE, TAGS.POSTGRESQL, TAGS.REDIS, TAGS.DOCKER],
+  },
+  {
+    title: "ClapBack",
+    description:
+      "Aplicación sencilla para enviar y recibir aplausos virtuales entre amigos, familiares o compañeros. Diseñada para generar interacciones positivas de manera rápida y divertida.",
+    link: "https://clapback.render.com",
+    github: "https://github.com/Ema322/clapback",
+    image: "/projects/clapback.webp",
+    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.NODE],
+  },
+];
+---
+
+<div class="flex flex-col gap-y-16">
+  {PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+      <div class="w-full md:w-1/2">
+        <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+          <img alt={title} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 md:max-w-lg">
+        <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">{title}</h3>
+        <div class="flex flex-wrap mt-2">
+          <ul class="flex flex-row mb-2 gap-x-2">
+  {tags.map((tag) => (
+    <li>
+      <span class="flex items-center gap-x-2 bg-gray-800 text-white rounded-md px-3 py-1 text-xs shadow-md transition transform hover:scale-105 hover:shadow-lg">
+        <tag.icon class="w-4 h-4" />
+        {tag.name}
+      </span>
+    </li>
+  ))}
+</ul>
+
+        </div>
+        <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+        <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Code
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+      </div>
+    </article>
+  ))}
+</div>
