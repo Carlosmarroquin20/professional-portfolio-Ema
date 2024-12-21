@@ -11,6 +11,8 @@ import ExpressIcon from "./icons/Express.astro";
 import Tailwind from "./icons/Tailwind.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
+import Vite from "./icons/Vite.astro"
+import Netlify from "./icons/Netlify.astro"
 
 const TAGS = {
   REACT: {
@@ -19,7 +21,7 @@ const TAGS = {
     icon: ReactIcon,
   },
   TAILWIND: {
-    name: "Tailwind CSS",
+    name: "Tailwind",
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
@@ -58,7 +60,18 @@ const TAGS = {
     class: "bg-gray-700 text-white",
     icon: ExpressIcon,
   },
+  VITE: {
+    name: "Vite",
+    class: "bg-purple-600 text-white",
+    icon: Vite,
+  },
+  NETLIFY: {
+    name: "Netlify",
+    class: "bg-teal-500 text-white",
+    icon: Netlify,
+  },
 };
+
 
 const PROJECTS = [
   {
@@ -74,7 +87,7 @@ const PROJECTS = [
     title: "Textractify",
     description:
       "Aplicación para el reconocimiento de imágenes y generación de descripciones en inglés y español utilizando inteligencia artificial. Desarrollada con React, Node.js, MongoDB y Firebase. Implementada en Render.",
-    link: "https://textractify.render.com",
+    link: "https://textractify-hugging-face-client.onrender.com/",
     github: "https://github.com/Frnn4268/textractify-hugging-face.git",
     image: "/projects/textractify.webp",
     tags: [TAGS.REACT, TAGS.NODE, TAGS.MONGODB, TAGS.FIREBASE],
@@ -89,11 +102,20 @@ const PROJECTS = [
     tags: [TAGS.REACT, TAGS.NODE, TAGS.POSTGRESQL, TAGS.REDIS, TAGS.DOCKER],
   },
   {
+    title: "Expense Tracker Pro",
+    description:
+      "Es una aplicación web diseñada para gestionar tus gastos de manera sencilla, eficiente y con un diseño moderno y atractivo, optimizado para dispositivos móviles y de escritorio.",
+    link: "https://expense-tracker322.netlify.app/",
+    github: "https://github.com/Carlosmarroquin20/expense-tracker-pro",
+    image: "/projects/Expense.webp",
+    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.VITE, TAGS.NETLIFY],
+  },
+  {
     title: "ClapBack",
     description:
       "Aplicación sencilla para enviar y recibir aplausos virtuales entre amigos, familiares o compañeros. Diseñada para generar interacciones positivas de manera rápida y divertida.",
-    link: "https://clapback.render.com",
-    github: "https://github.com/Ema322/clapback",
+    link: "",
+    github: "",
     image: "/projects/clapback.webp",
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.NODE],
   },
