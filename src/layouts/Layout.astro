@@ -51,6 +51,13 @@ const { description, title } = Astro.props
         flex-direction: column;
         min-height: 100vh;
         overscroll-behavior: none;
+        padding-top: 5.5rem;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding-top: 6.25rem;
+        }
       }
 
       @media (prefers-reduced-motion: reduce) {

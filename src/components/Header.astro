@@ -31,24 +31,29 @@ const navItems = [
 ---
 
 <header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2 px-4"
+  class="fixed inset-x-0 top-0 z-10 flex items-center justify-center w-full mx-auto mt-2 px-3"
 >
   <nav
-    class="flex px-4 py-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-300 justify-center items-center gap-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-gray-200/50 dark:border-gray-800/50 shadow-lg"
+    id="header-nav"
+    aria-label="Navegación principal"
+    class="flex w-full max-w-5xl items-center gap-2 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-gray-200/50 dark:border-gray-800/50 shadow-lg px-4 py-3 text-sm font-medium text-gray-600 dark:text-gray-300"
   >
-    {
-      navItems.map((link) => (
-        <a
-          class="relative block px-3 py-2 transition duration-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-950/30"
-          aria-label={link.label}
-          href={link.url}
-        >
-          {link.title}
-        </a>
-      ))
-    }
-    <div class="border-l border-gray-200 dark:border-gray-700 mx-2 h-6"></div>
-    <ThemeToggle />
+    <div class="flex flex-1 flex-wrap items-center justify-center gap-2 min-w-0">
+      {
+        navItems.map((link) => (
+          <a
+            class="relative block px-3 py-2 transition duration-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-950/30 text-xs sm:text-sm"
+            aria-label={link.label}
+            href={link.url}
+          >
+            {link.title}
+          </a>
+        ))
+      }
+    </div>
+    <div class="flex items-center md:border-l md:border-gray-200/50 dark:md:border-gray-800/50 md:pl-3 md:ml-2">
+      <ThemeToggle />
+    </div>
   </nav>
 </header>
 
