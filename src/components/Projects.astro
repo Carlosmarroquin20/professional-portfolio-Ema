@@ -17,57 +17,57 @@ import Netlify from "./icons/Netlify.astro"
 const TAGS = {
   REACT: {
     name: "React",
-    class: "bg-blue-500 text-white",
+    class: "bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800",
     icon: ReactIcon,
   },
   TAILWIND: {
     name: "Tailwind",
-    class: "bg-[#003159] text-white",
+    class: "bg-cyan-100 dark:bg-cyan-900/40 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800",
     icon: Tailwind,
   },
   NODE: {
     name: "Node.js",
-    class: "bg-green-600 text-white",
+    class: "bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-800",
     icon: NodeIcon,
   },
   MONGODB: {
     name: "MongoDB",
-    class: "bg-green-800 text-white",
+    class: "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800",
     icon: MongoDBIcon,
   },
   POSTGRESQL: {
     name: "PostgreSQL",
-    class: "bg-blue-700 text-white",
+    class: "bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800",
     icon: PostgreSQLIcon,
   },
   FIREBASE: {
     name: "Firebase",
-    class: "bg-yellow-500 text-white",
+    class: "bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-800",
     icon: FirebaseIcon,
   },
   REDIS: {
     name: "Redis",
-    class: "bg-red-500 text-white",
+    class: "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800",
     icon: RedisIcon,
   },
   DOCKER: {
     name: "Docker",
-    class: "bg-blue-600 text-white",
+    class: "bg-sky-100 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800",
     icon: DockerIcon,
   },
   EXPRESS: {
     name: "Express.js",
-    class: "bg-gray-700 text-white",
+    class: "bg-gray-100 dark:bg-gray-700/40 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700",
     icon: ExpressIcon,
   },
   VITE: {
     name: "Vite",
-    class: "bg-purple-600 text-white",
+    class: "bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800",
     icon: Vite,
   },
   NETLIFY: {
     name: "Netlify",
-    class: "bg-teal-500 text-white",
+    class: "bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800",
     icon: Netlify,
   },
 };
@@ -122,44 +122,52 @@ const PROJECTS = [
 ];
 ---
 
-<div class="flex flex-col gap-y-16">
+<div class="grid gap-12">
   {PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-      <div class="w-full md:w-1/2">
-        <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-          <img alt={title} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    <article class="group">
+      <div class="grid gap-6 md:grid-cols-2 md:gap-8">
+        <div class="relative flex flex-col items-center overflow-hidden rounded-2xl shadow-lg transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 border border-gray-200/50 dark:border-gray-800/50 group-hover:border-blue-300 dark:group-hover:border-blue-800">
+          <img 
+            alt={title} 
+            class="w-full h-64 md:h-80 object-cover transition duration-500 group-hover:scale-105" 
+            loading="lazy" 
+            src={image} 
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/0 via-transparent to-black/0 group-hover:from-black/10 transition-all duration-300"></div>
         </div>
-      </div>
-      <div class="w-full md:w-1/2 md:max-w-lg">
-        <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">{title}</h3>
-        <div class="flex flex-wrap mt-2">
-          <ul class="flex flex-row mb-2 gap-x-2">
-  {tags.map((tag) => (
-    <li>
-      <span class="flex items-center gap-x-2 bg-gray-800 text-white rounded-md px-3 py-1 text-xs shadow-md transition transform hover:scale-105 hover:shadow-lg">
-        <tag.icon class="w-4 h-4" />
-        {tag.name}
-      </span>
-    </li>
-  ))}
-</ul>
 
+        <div class="flex flex-col justify-between">
+          <div>
+            <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">{title}</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 text-lg">{description}</p>
+          </div>
+
+          <div>
+            <div class="flex flex-wrap gap-2 mb-6">
+              {tags.map((tag) => (
+                <span class={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-all duration-300 hover:scale-105 ${tag.class}`}>
+                  <tag.icon class="w-4 h-4" />
+                  {tag.name}
+                </span>
+              ))}
+            </div>
+
+            <div class="flex items-end gap-4 flex-wrap">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-5" />
+                  Código
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-5" />
+                  Ver proyecto
+                </LinkButton>
+              )}
+            </div>
+          </div>
         </div>
-        <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-        <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
-        </footer>
       </div>
     </article>
   ))}

@@ -7,6 +7,9 @@ import CodeIcon from "@/components/icons/Code.astro"
 import Experience from "@/components/Experience.astro"
 import ProfileCheck from "@/components/icons/ProfileCheck.astro"
 import Projects from "@/components/Projects.astro"
+import Skills from "@/components/Skills.astro"
+import Stats from "@/components/Stats.astro"
+import CTA from "@/components/CTA.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/Hero.astro"
 import TitleSection from "@/components/TitleSection.astro"
@@ -23,6 +26,35 @@ import Certifications from "@/components/Certifications.astro"
       </slot>
     </Hero>
     </SectionContainer>
+
+    <SectionContainer class="py-12 md:py-20">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="group p-6 rounded-2xl bg-gradient-to-br from-gray-50/50 to-gray-100/50 dark:from-gray-900/30 dark:to-gray-800/30 border border-gray-200/50 dark:border-gray-800/50 hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 backdrop-blur">
+          <div class="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">5+</div>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Años de Experiencia</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">En desarrollo de software</p>
+        </div>
+        
+        <div class="group p-6 rounded-2xl bg-gradient-to-br from-gray-50/50 to-gray-100/50 dark:from-gray-900/30 dark:to-gray-800/30 border border-gray-200/50 dark:border-gray-800/50 hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 backdrop-blur">
+          <div class="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">20+</div>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Proyectos</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Desde pequeños hasta complejos</p>
+        </div>
+        
+        <div class="group p-6 rounded-2xl bg-gradient-to-br from-gray-50/50 to-gray-100/50 dark:from-gray-900/30 dark:to-gray-800/30 border border-gray-200/50 dark:border-gray-800/50 hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 backdrop-blur">
+          <div class="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">15+</div>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Tecnologías</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Frameworks y herramientas</p>
+        </div>
+        
+        <div class="group p-6 rounded-2xl bg-gradient-to-br from-gray-50/50 to-gray-100/50 dark:from-gray-900/30 dark:to-gray-800/30 border border-gray-200/50 dark:border-gray-800/50 hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 backdrop-blur">
+          <div class="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">100%</div>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Satisfacción</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Tasa de satisfacción</p>
+        </div>
+      </div>
+    </SectionContainer>
+
     <div class="space-y-24">
     <SectionContainer id="experiencia">
       <TitleSection>
@@ -48,6 +80,14 @@ import Certifications from "@/components/Certifications.astro"
       <AboutMe />
     </SectionContainer>
 
+    <SectionContainer id="skills">
+      <TitleSection>
+        <CodeIcon class="size-8" />
+        Habilidades Técnicas
+      </TitleSection>
+      <Skills />
+    </SectionContainer>
+
     <SectionContainer id="certificaciones">
       <TitleSection>
         <CodeIcon class="size-7" />
@@ -57,5 +97,9 @@ import Certifications from "@/components/Certifications.astro"
     </SectionContainer>
     
   </div>
+
+  <SectionContainer class="py-12 md:py-16">
+    <CTA />
+  </SectionContainer>
   </main>
 </Layout>

@@ -3,27 +3,37 @@ const currentYear = new Date().getFullYear()
 ---
 
 <footer
-  class="opacity-80 m-4 min-[375px]:pl-4 md:pl-0 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"
+  class="mt-20 border-t border-gray-200 dark:border-gray-800/50 py-12"
 >
   <div
-    class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"
+    class="max-w-6xl mx-auto px-4"
   >
-    <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
-      >© {currentYear}
-      <a href="https://www.linkedin.com/in/emanuel-marroquin-160488321/" class="hover:underline">Ema322</a> // Casi
-      todos los derechos reservados y gracias a MinuDev 
-    </span>
-    <ul
-      class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
-    >
-      <li>
-        <a href="/#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mí</a>
-      </li>
-      <li>
-        <a id="contacto" href="mailto:carlosema322@gmail.com" class="hover:underline"
-          >Contacto</a
-        >
-      </li>
-    </ul>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Emanuel Marroquín</h3>
+        <p class="text-gray-600 dark:text-gray-400">Desarrollador Full-Stack apasionado por crear soluciones innovadoras.</p>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-4 uppercase tracking-wider">Enlaces</h3>
+        <ul class="space-y-2">
+          <li><a href="/#sobre-mi" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">Sobre mí</a></li>
+          <li><a href="/#experiencia" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">Experiencia</a></li>
+          <li><a href="/#proyectos" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">Proyectos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-4 uppercase tracking-wider">Contacto</h3>
+        <ul class="space-y-2">
+          <li><a href="mailto:carlosema322@gmail.com" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/emanuel-marroquin-160488321/" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">LinkedIn</a></li>
+          <li><a href="https://github.com/Carlosmarroquin20" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row md:items-center md:justify-between">
+      <p class="text-sm text-gray-600 dark:text-gray-400">© {currentYear} Emanuel Marroquín. Todos los derechos reservados.</p>
+      <p class="text-sm text-gray-500 dark:text-gray-500 mt-4 md:mt-0">Diseño moderno construido con Astro + Tailwind CSS</p>
+    </div>
   </div>
 </footer>

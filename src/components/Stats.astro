@@ -1,0 +1,42 @@
+---
+const STATS = [
+  {
+    label: "Años de Experiencia",
+    value: "5+",
+    description: "En desarrollo de software"
+  },
+  {
+    label: "Proyectos Completados",
+    value: "20+",
+    description: "Desde pequeños hasta complejos"
+  },
+  {
+    label: "Tecnologías",
+    value: "15+",
+    description: "Frameworks y herramientas"
+  },
+  {
+    label: "Clientes Satisfechos",
+    value: "100%",
+    description: "Tasa de satisfacción"
+  }
+]
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+  {STATS.map((stat) => (
+    <div class="group p-6 rounded-2xl bg-gradient-to-br from-gray-50/50 to-gray-100/50 dark:from-gray-900/30 dark:to-gray-800/30 border border-gray-200/50 dark:border-gray-800/50 hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 backdrop-blur">
+      <div class="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+        {stat.value}
+      </div>
+      
+      <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+        {stat.label}
+      </h3>
+      
+      <p class="text-sm text-gray-600 dark:text-gray-400">
+        {stat.description}
+      </p>
+    </div>
+  ))}
+</div>

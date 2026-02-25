@@ -1,9 +1,10 @@
-<div class="flex items-center ">
-<span class="relative inline-flex overflow-hidden rounded-full p-[1px]">
+<div class="flex items-center gap-2">
+<span class="relative inline-flex overflow-hidden rounded-full p-[2px]">
   <span
-    class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]"
+    class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#80C0FF_0%,#2563eb_50%,#80C0FF_100%)]"
   ></span>
-  <div class="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-green-800 bg-green-100 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap">
+  <div class="inline-flex items-center justify-center w-full px-4 py-2 text-sm font-semibold text-blue-700 bg-gradient-to-r from-blue-50 to-purple-50 rounded-full cursor-default dark:bg-gradient-to-r dark:from-blue-900/40 dark:to-purple-900/40 dark:text-blue-300 backdrop-blur-2xl border border-blue-200 dark:border-blue-800/50 whitespace-nowrap shadow-sm">
+    <span class="mr-2">🟢</span>
     <slot />
   </div>
 </span>

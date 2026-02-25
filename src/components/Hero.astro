@@ -7,31 +7,31 @@ import DownloadIcon from "@/components/icons/Download.astro";
 import SocialPill from "@/components/SocialPill.astro";
 ---
 
-<div id="inicio" class="max-w-xl"> 
-  <div class="flex gap-4 mb-4">
+<div id="inicio" class="max-w-4xl mx-auto"> 
+  <div class="flex gap-6 mb-8 items-center">
     <img
-      class="rounded-full shadow-lg size-16"
+      class="rounded-2xl shadow-2xl size-20 ring-2 ring-blue-200 dark:ring-blue-900/50"
       src="/Ema.webp"
       alt={personalImageAlt}
     />
     <Badge>Disponible para trabajar</Badge>
   </div>
   <h1
-    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+    class="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 leading-tight"
   >
-    Hey, soy Ema
+    Hey, soy <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Emanuel Marroquín</span>
   </h1>
   <p
-    class="mt-4 text-lg text-gray-700 dark:text-gray-300 [&>strong]:text-blue-500 [&>strong]:font-semibold"
+    class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-4 leading-relaxed max-w-2xl"
   >
-    Ingeniero en Sistemas y <strong>Desarrollador Full-Stack</strong> apasionado por crear soluciones innovadoras que transformen ideas en resultados concretos.
+    Ingeniero en Sistemas y <strong class="text-blue-600 dark:text-blue-400 font-semibold">Desarrollador Full-Stack</strong> con pasión por crear soluciones innovadoras que transforman ideas en impacto real.
   </p>
   <p
-    class="mt-2 text-lg text-gray-700 dark:text-gray-400 [&>strong]:text-yellow-500"
+    class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed max-w-2xl"
   >
-    Mi enfoque está en desarrollar <strong>aplicaciones modernas y escalables</strong>, resolviendo desafíos complejos con creatividad y precisión.
+    Especializado en desarrollar <strong class="text-purple-600 dark:text-purple-400 font-semibold">aplicaciones escalables y modernas</strong> que resuelven desafíos complejos con creatividad y precisión.
   </p>
-  <nav class="flex flex-wrap gap-4 mt-6">
+  <nav class="flex flex-wrap gap-3 mt-8">
     <SocialPill href="mailto:carlosema322@gmail.com">
       <MailIcon class="size-4" />
       Contáctame
@@ -68,6 +68,5 @@ import SocialPill from "@/components/SocialPill.astro";
       </svg>
       Descargar CV
     </SocialPill>
-    
   </nav>
 </div>

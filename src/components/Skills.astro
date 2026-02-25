@@ -1,0 +1,68 @@
+---
+import React from "./icons/React.astro"
+import Node from "./icons/Node.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import NextJS from "./icons/NextJS.astro"
+import MongoDB from "./icons/MongoDB.astro"
+import PostgreSQL from "./icons/PostgreSQL.astro"
+import Docker from "./icons/DockerIcon.astro"
+import Firebase from "./icons/FirebaseIcon.astro"
+
+const SKILLS = [
+  {
+    category: "Frontend",
+    skills: [
+      { name: "React", icon: React, level: 95 },
+      { name: "Next.js", icon: NextJS, level: 90 },
+      { name: "Tailwind CSS", icon: Tailwind, level: 95 },
+    ]
+  },
+  {
+    category: "Backend",
+    skills: [
+      { name: "Node.js", icon: Node, level: 90 },
+      { name: "Express.js", icon: Node, level: 85 },
+      { name: "MongoDB", icon: MongoDB, level: 85 },
+      { name: "PostgreSQL", icon: PostgreSQL, level: 80 },
+    ]
+  },
+  {
+    category: "DevOps & Tools",
+    skills: [
+      { name: "Docker", icon: Docker, level: 85 },
+      { name: "Firebase", icon: Firebase, level: 80 },
+    ]
+  }
+]
+---
+
+<div class="grid gap-10">
+  {SKILLS.map((category) => (
+    <div>
+      <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">{category.category}</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {category.skills.map((skill) => (
+          <div class="group">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex items-center justify-center group-hover:from-blue-500/20 group-hover:to-purple-500/20 transition-colors">
+                  <skill.icon class="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                </div>
+                <span class="font-semibold text-gray-900 dark:text-white">{skill.name}</span>
+              </div>
+              <span class="text-sm font-bold text-gray-600 dark:text-gray-400">{skill.level}%</span>
+            </div>
+            
+            <div class="h-2 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
+              <div 
+                class="h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-700 origin-left"
+                style={`width: ${skill.level}%`}
+              ></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
