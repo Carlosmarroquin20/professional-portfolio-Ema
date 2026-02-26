@@ -1,41 +1,55 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
+
 const EXPERIENCE = [
   {
     date: "2019 - 2020",
-    title: "Especialista en Diseño Publicitario y Producción Multimedia",
+    titleEs: "Especialista en Diseño Publicitario y Producción Multimedia",
+    titleEn: "Advertising Design & Multimedia Production Specialist",
     company: "Freelance",
-    description:
-      "Creación de material gráfico y videos publicitarios utilizando herramientas de diseño multimedia como Photoshop. Enfoque en la comunicación visual efectiva para campañas comerciales.",
+    descriptionEs: "Creación de material gráfico y videos publicitarios con herramientas de diseño multimedia. Enfoque en comunicación visual efectiva para campañas comerciales.",
+    descriptionEn: "Creation of graphic materials and advertising videos using multimedia design tools. Focused on effective visual communication for commercial campaigns.",
   },
   {
     date: "2021 - 2022",
-    title: "Coordinador de Tecnología y Producción Audiovisual",
-    company: "Unción TV (Canal Cristiano)",
-    description:
-      "Gestión integral del área tecnológica del canal. Supervisión de cámaras, sistemas de transmisión y software audiovisual. Desarrollo y ejecución de contenido publicitario para medios digitales y televisión.",
+    titleEs: "Coordinador de Tecnología y Producción Audiovisual",
+    titleEn: "Technology & Audiovisual Production Coordinator",
+    company: "Unción TV",
+    descriptionEs: "Gestión del área tecnológica del canal. Supervisión de cámaras, sistemas de transmisión y software audiovisual. Desarrollo de contenido publicitario para medios digitales y televisión.",
+    descriptionEn: "Management of the channel's technology area. Oversight of cameras, broadcasting systems and audiovisual software. Development of advertising content for digital media and TV.",
   },
   {
     date: "2023 - 2024",
-    title: "Instructor de Programación y Tecnologías Computacionales",
+    titleEs: "Instructor de Programación y Tecnologías Computacionales",
+    titleEn: "Programming & Computer Technologies Instructor",
     company: "Liceo Nuevo Milenio",
-    description:
-      "Impartición de clases de programación y computación, diseñando planes de estudio efectivos. Orientación al aprendizaje práctico mediante proyectos académicos enfocados en lógica de programación y desarrollo de software.",
+    descriptionEs: "Impartición de clases de programación y computación con planes de estudio prácticos enfocados en lógica de programación y desarrollo de software.",
+    descriptionEn: "Teaching programming and computing courses with practical curricula focused on programming logic and software development.",
   },
   {
-    date: "Actualmente...",
-    title: "Desarrollador Freelance - Sistema de Gestión de Lotificaciones",
+    date: "Actualmente",
+    dateEn: "Current",
+    titleEs: "Desarrollador Freelance — Sistema de Gestión de Lotificaciones",
+    titleEn: "Freelance Developer — Land Management System",
     company: "Freelance",
-    description:
-      "Diseño e implementación de un sistema integral para la gestión de lotificaciones. Desarrollo backend con Node.js y base de datos MongoDB, junto con un frontend responsivo en React. Gestión completa del ciclo de vida del software.",
+    descriptionEs: "Diseño e implementación de un sistema integral para la gestión de lotificaciones. Backend con Node.js y MongoDB, frontend responsivo en React. Gestión completa del ciclo de vida del software.",
+    descriptionEn: "Design and implementation of a comprehensive land-lot management system. Node.js + MongoDB backend, responsive React frontend. Full software lifecycle management.",
   },
 ];
 ---
 
 <ol class="relative mt-8 space-y-6">
-  {EXPERIENCE.map((experience) => (
-    <li class="">
-      <ExperienceItem {...experience} />
+  {EXPERIENCE.map((exp) => (
+    <li>
+      <ExperienceItem
+        title={exp.titleEs}
+        titleEn={exp.titleEn}
+        company={exp.company}
+        date={exp.date}
+        dateEn={exp.dateEn}
+        description={exp.descriptionEs}
+        descriptionEn={exp.descriptionEn}
+      />
     </li>
   ))}
 </ol>

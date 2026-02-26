@@ -35,8 +35,25 @@ Experiencia | Proyectos | Skills | Mi Valor | Sobre mí | Contacto
 - All tags in Projects.astro support `icon: null` (renders text-only tag)
 - Certifications: `image || (icon + placeholderBg)` pattern
 
+## i18n System (CSS class-based, no route duplication)
+- Anti-flash inline script in Layout.astro `<head>` sets `html.lang-en` class from localStorage before paint
+- Global CSS: `.i18n-en{display:none}` + `html.lang-en .i18n-es{display:none}` etc.
+- Inline spans: `<span class="i18n-es">texto</span><span class="i18n-en">text</span>`
+- Block elements: `<p class="i18n-es-block">...</p><p class="i18n-en-block">...</p>`
+- `window.toggleLang()` defined in Layout.astro, called by `LanguageToggle.astro`
+- Language stored in `localStorage['portfolio-lang']` ('es' or 'en')
+- CV download: `data-cv-es="/CV-Emanuel-Marroquin.pdf"` + `data-cv-en="/CV-Emanuel-Marroquin-EN.pdf"` on `<a>` tag — toggled by `toggleLang()`
+- **TODO**: Add `/public/CV-Emanuel-Marroquin-EN.pdf` for English CV
+
+## Project Tabs (Projects.astro)
+- Each project has `categories: string[]` (e.g. ["seguridad", "devops"])
+- Tab buttons have `.project-tab-btn` class + `data-filter` attribute
+- Project cards have `.project-card` class + `data-categories` attribute
+- Script in Projects.astro initializes tabs on `astro:page-load`
+- Categories: todos | seguridad | web | dotnet | ia | devops
+
 ## Important Notes
 - GitHub URL placeholder: https://github.com/Carlosmarroquin20 (update with real repo URLs)
-- No i18n implemented (was requested but out of scope)
 - Stats card: 2-col mobile, 4-col desktop (grid-cols-2 md:grid-cols-4)
-- Header nav: scrollable on mobile (overflow-x-auto), text-[11px] on xs screens
+- Header nav: scrollable on mobile (no-scrollbar + overflow-x-auto), text-[10px] on xs screens
+- LanguageToggle placed in Header.astro between nav links and ThemeToggle

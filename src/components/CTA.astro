@@ -5,31 +5,37 @@ import LinkedInIcon from "./icons/LinkedIn.astro"
 
 <section class="px-4 sm:px-6 py-16 md:py-24 bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl text-white">
   <div class="max-w-3xl mx-auto text-center">
-    <h2 class="text-4xl md:text-5xl font-bold mb-6">
-      ¿Tienes un proyecto en mente?
+    <h2 class="text-3xl md:text-5xl font-bold mb-6">
+      <span class="i18n-es">¿Tienes un proyecto en mente?</span>
+      <span class="i18n-en">Have a project in mind?</span>
     </h2>
-    
-    <p class="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed">
-      Me encantaría colaborar contigo en tu próximo proyecto. Contactame para discutir ideas, soluciones técnicas y cómo puedo ayudarte a convertir tu visión en realidad.
+
+    <p class="text-base md:text-xl text-blue-100 mb-8 leading-relaxed i18n-es-block">
+      Me encantaría colaborar en tu próximo proyecto. Contáctame para discutir ideas, soluciones técnicas y cómo puedo ayudarte a convertir tu visión en realidad.
     </p>
-    
+    <p class="text-base md:text-xl text-blue-100 mb-8 leading-relaxed i18n-en-block">
+      I'd love to collaborate on your next project. Reach out to discuss ideas, technical solutions and how I can help turn your vision into reality.
+    </p>
+
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a 
+      <a
         href="mailto:carlosema322@gmail.com"
         class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-blue-50 transition-colors duration-300 transform hover:-translate-y-0.5"
       >
         <MailIcon class="size-5" />
-        Envía un email
+        <span class="i18n-es">Envía un email</span>
+        <span class="i18n-en">Send an email</span>
       </a>
-      
-      <a 
+
+      <a
         href="https://www.linkedin.com/in/emanuel-marroquin-160488321/"
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-lg transition-colors duration-300 transform hover:-translate-y-0.5"
       >
         <LinkedInIcon class="size-5" />
-        Conecta en LinkedIn
+        <span class="i18n-es">Conecta en LinkedIn</span>
+        <span class="i18n-en">Connect on LinkedIn</span>
       </a>
     </div>
   </div>

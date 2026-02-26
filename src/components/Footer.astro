@@ -2,27 +2,47 @@
 const currentYear = new Date().getFullYear()
 ---
 
-<footer
-  class="mt-20 border-t border-gray-200 dark:border-gray-800/50 py-12 px-4 sm:px-6"
->
-  <div
-    class="max-w-6xl mx-auto"
-  >
+<footer class="mt-20 border-t border-gray-200 dark:border-gray-800/50 py-12 px-4 sm:px-6">
+  <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
       <div>
         <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Emanuel Marroquín</h3>
-        <p class="text-gray-600 dark:text-gray-400">Desarrollador Full-Stack apasionado por crear soluciones innovadoras.</p>
+        <p class="text-gray-600 dark:text-gray-400 i18n-es-block">.NET Developer · Seguridad Informática · Cloud</p>
+        <p class="text-gray-600 dark:text-gray-400 i18n-en-block">.NET Developer · Information Security · Cloud</p>
       </div>
       <div>
-        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-4 uppercase tracking-wider">Enlaces</h3>
+        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-4 uppercase tracking-wider">
+          <span class="i18n-es">Enlaces</span>
+          <span class="i18n-en">Links</span>
+        </h3>
         <ul class="space-y-2">
-          <li><a href="/#sobre-mi" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">Sobre mí</a></li>
-          <li><a href="/#experiencia" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">Experiencia</a></li>
-          <li><a href="/#proyectos" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">Proyectos</a></li>
+          <li>
+            <a href="/#sobre-mi" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">
+              <span class="i18n-es">Sobre mí</span><span class="i18n-en">About me</span>
+            </a>
+          </li>
+          <li>
+            <a href="/#experiencia" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">
+              <span class="i18n-es">Experiencia</span><span class="i18n-en">Experience</span>
+            </a>
+          </li>
+          <li>
+            <a href="/#proyectos" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">
+              <span class="i18n-es">Proyectos</span><span class="i18n-en">Projects</span>
+            </a>
+          </li>
+          <li>
+            <a href="/#valor" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">
+              <span class="i18n-es">Mi Valor</span><span class="i18n-en">My Value</span>
+            </a>
+          </li>
         </ul>
       </div>
       <div>
-        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-4 uppercase tracking-wider">Contacto</h3>
+        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-4 uppercase tracking-wider">
+          <span class="i18n-es">Contacto</span>
+          <span class="i18n-en">Contact</span>
+        </h3>
         <ul class="space-y-2">
           <li><a href="mailto:carlosema322@gmail.com" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">Email</a></li>
           <li><a href="https://www.linkedin.com/in/emanuel-marroquin-160488321/" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition">LinkedIn</a></li>
@@ -31,9 +51,17 @@ const currentYear = new Date().getFullYear()
       </div>
     </div>
 
-    <div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row md:items-center md:justify-between">
-      <p class="text-sm text-gray-600 dark:text-gray-400">© {currentYear} Emanuel Marroquín. Todos los derechos reservados.</p>
-      <p class="text-sm text-gray-500 dark:text-gray-500 mt-4 md:mt-0">Diseño moderno construido con Astro + Tailwind CSS</p>
+    <div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+      <p class="text-sm text-gray-600 dark:text-gray-400">
+        © {currentYear} Emanuel Marroquín.
+        <span class="i18n-es">Todos los derechos reservados.</span>
+        <span class="i18n-en">All rights reserved.</span>
+      </p>
+      <p class="text-sm text-gray-500 dark:text-gray-500">
+        <span class="i18n-es">Construido con</span>
+        <span class="i18n-en">Built with</span>
+        Astro + Tailwind CSS
+      </p>
     </div>
   </div>
 </footer>

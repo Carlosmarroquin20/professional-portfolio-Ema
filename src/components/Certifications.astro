@@ -1,97 +1,101 @@
 ---
 const CERTIFICATIONS = [
   {
-    title: "Maestría en Seguridad Informática",
+    titleEs: "Maestría en Seguridad Informática",
+    titleEn: "Master's in Information Security",
     image: null,
     icon: `<svg class="w-10 h-10 text-red-500 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>`,
     placeholderBg: "bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20",
-    description: "Universidad Mariano Gálvez de Guatemala · En curso. Laboratorios prácticos en análisis de vulnerabilidades, auditoría de sistemas, seguridad móvil, análisis de redes y GRC.",
-    badge: "En curso",
+    descriptionEs: "Universidad Mariano Gálvez de Guatemala · En curso. Laboratorios prácticos: análisis de vulnerabilidades, auditoría de sistemas, seguridad móvil, análisis de redes y GRC.",
+    descriptionEn: "Universidad Mariano Gálvez de Guatemala · In progress. Hands-on labs: vulnerability analysis, system auditing, mobile security, network analysis and GRC.",
+    badgeEs: "En curso",
+    badgeEn: "In progress",
     badgeClass: "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-700",
     tags: ["ISO 27001", "COBIT 2023", "OWASP", "Pentesting", "Auditoría"],
   },
   {
-    title: "Certificación en SCRUM",
+    titleEs: "Certificación en SCRUM",
+    titleEn: "SCRUM Certification",
     image: "/certifications/Scrum.webp",
-    icon: null,
-    placeholderBg: null,
-    description: "Gestión ágil de proyectos y colaboración en equipos multidisciplinarios.",
-    badge: null,
-    badgeClass: null,
-    tags: [],
+    icon: null, placeholderBg: null,
+    descriptionEs: "Gestión ágil de proyectos y colaboración en equipos multidisciplinarios.",
+    descriptionEn: "Agile project management and collaboration in multidisciplinary teams.",
+    badgeEs: null, badgeEn: null, badgeClass: null, tags: [],
   },
   {
-    title: "Certificación en Estructuras de Datos",
+    titleEs: "Certificación en Estructuras de Datos",
+    titleEn: "Data Structures Certification",
     image: "/certifications/JLDS.webp",
-    icon: null,
-    placeholderBg: null,
-    description: "Dominio de fundamentos de JavaScript, algoritmos y estructuras de datos esenciales.",
-    badge: null,
-    badgeClass: null,
-    tags: [],
+    icon: null, placeholderBg: null,
+    descriptionEs: "Fundamentos de JavaScript, algoritmos y estructuras de datos esenciales.",
+    descriptionEn: "JavaScript fundamentals, algorithms and essential data structures.",
+    badgeEs: null, badgeEn: null, badgeClass: null, tags: [],
   },
   {
-    title: "Certificación en Fundamentos de Git",
+    titleEs: "Certificación en Fundamentos de Git",
+    titleEn: "Git Fundamentals Certification",
     image: "/certifications/Gitt.webp",
-    icon: null,
-    placeholderBg: null,
-    description: "Gestión eficiente de versiones y colaboración en proyectos con Git.",
-    badge: null,
-    badgeClass: null,
-    tags: [],
+    icon: null, placeholderBg: null,
+    descriptionEs: "Gestión eficiente de versiones y colaboración en proyectos con Git.",
+    descriptionEn: "Efficient version control and project collaboration with Git.",
+    badgeEs: null, badgeEn: null, badgeClass: null, tags: [],
   },
   {
-    title: "Certificación en JavaScript Intermedio",
+    titleEs: "Certificación en JavaScript Intermedio",
+    titleEn: "Intermediate JavaScript Certification",
     image: "/certifications/JsI.webp",
-    icon: null,
-    placeholderBg: null,
-    description: "Desarrollo de habilidades avanzadas en JavaScript para crear aplicaciones dinámicas y escalables.",
-    badge: null,
-    badgeClass: null,
-    tags: [],
+    icon: null, placeholderBg: null,
+    descriptionEs: "Habilidades avanzadas en JavaScript para aplicaciones dinámicas y escalables.",
+    descriptionEn: "Advanced JavaScript skills for dynamic and scalable applications.",
+    badgeEs: null, badgeEn: null, badgeClass: null, tags: [],
   },
   {
-    title: "Certificación en Inglés — Nivel C1.2 Avanzado",
+    titleEs: "Certificación en Inglés — Nivel C1.2 Avanzado",
+    titleEn: "English Certification — Advanced C1.2",
     image: "/certifications/TOEFL.webp",
-    icon: null,
-    placeholderBg: null,
-    description: "Dominio avanzado del inglés para comunicación efectiva en contextos profesionales y académicos internacionales.",
-    badge: null,
-    badgeClass: null,
-    tags: [],
+    icon: null, placeholderBg: null,
+    descriptionEs: "Dominio avanzado del inglés para comunicación efectiva en contextos profesionales y académicos internacionales.",
+    descriptionEn: "Advanced English proficiency for effective communication in professional and international academic contexts.",
+    badgeEs: null, badgeEn: null, badgeClass: null, tags: [],
   },
 ];
 ---
 
 <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-  {CERTIFICATIONS.map(({ title, image, icon, placeholderBg, description, badge, badgeClass, tags }) => (
+  {CERTIFICATIONS.map(({ titleEs, titleEn, image, icon, placeholderBg, descriptionEs, descriptionEn, badgeEs, badgeEn, badgeClass, tags }) => (
     <div class="flex flex-col p-5 space-y-4 transition-all duration-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1">
-      <!-- Imagen o ícono placeholder -->
+
+      <!-- Image or icon placeholder -->
       <div class="w-full h-44 overflow-hidden rounded-xl">
         {image ? (
-          <img
-            src={image}
-            alt={`Certificación: ${title}`}
-            class="object-cover w-full h-full"
-            loading="lazy"
-          />
+          <img src={image} alt={titleEs} class="object-cover w-full h-full" loading="lazy" />
         ) : (
           <div class={`w-full h-full flex flex-col items-center justify-center gap-2 ${placeholderBg}`}>
             <div set:html={icon} />
-            <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">Formación Académica</span>
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">
+              <span class="i18n-es">Formación Académica</span>
+              <span class="i18n-en">Academic Training</span>
+            </span>
           </div>
         )}
       </div>
 
-      <!-- Contenido -->
+      <!-- Content -->
       <div class="flex-1 flex flex-col gap-2">
         <div class="flex items-start justify-between gap-2">
-          <h3 class="text-sm sm:text-base font-semibold text-gray-800 dark:text-white leading-snug">{title}</h3>
-          {badge && (
-            <span class={`flex-shrink-0 text-xs px-2 py-0.5 rounded-full font-semibold ${badgeClass}`}>{badge}</span>
+          <h3 class="text-sm sm:text-base font-semibold text-gray-800 dark:text-white leading-snug">
+            <span class="i18n-es">{titleEs}</span>
+            <span class="i18n-en">{titleEn}</span>
+          </h3>
+          {(badgeEs || badgeEn) && badgeClass && (
+            <div class="flex-shrink-0">
+              {badgeEs && <span class={`i18n-es text-xs px-2 py-0.5 rounded-full font-semibold ${badgeClass}`}>{badgeEs}</span>}
+              {badgeEn && <span class={`i18n-en text-xs px-2 py-0.5 rounded-full font-semibold ${badgeClass}`}>{badgeEn}</span>}
+            </div>
           )}
         </div>
-        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{description}</p>
+        <p class="i18n-es-block text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{descriptionEs}</p>
+        <p class="i18n-en-block text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{descriptionEn}</p>
 
         {tags.length > 0 && (
           <div class="flex flex-wrap gap-1.5 pt-1">

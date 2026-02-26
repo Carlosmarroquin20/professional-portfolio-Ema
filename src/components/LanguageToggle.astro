@@ -1,0 +1,22 @@
+<!--
+  Language toggle button.
+  In ES mode → shows "EN" (click to switch to English).
+  In EN mode → shows "ES" (click to switch to Spanish).
+  Uses the global window.toggleLang() defined in Layout.astro.
+-->
+<button
+  onclick="window.toggleLang && window.toggleLang()"
+  aria-label="Switch language / Cambiar idioma"
+  class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold border border-gray-300 dark:border-gray-600 bg-white/90 dark:bg-gray-800/90 text-gray-700 dark:text-gray-200 hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 select-none flex-shrink-0"
+>
+  <!-- Visible in ES mode: click to go to EN -->
+  <span class="i18n-es flex items-center gap-1">
+    <span class="text-base leading-none">🇺🇸</span>
+    <span>EN</span>
+  </span>
+  <!-- Visible in EN mode: click to go to ES -->
+  <span class="i18n-en flex items-center gap-1">
+    <span class="text-base leading-none">🇬🇹</span>
+    <span>ES</span>
+  </span>
+</button>

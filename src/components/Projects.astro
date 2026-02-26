@@ -11,209 +11,184 @@ import ExpressIcon from "./icons/Express.astro";
 import Tailwind from "./icons/Tailwind.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
-import Vite from "./icons/Vite.astro"
-import Netlify from "./icons/Netlify.astro"
+import Vite from "./icons/Vite.astro";
+import Netlify from "./icons/Netlify.astro";
 
 const TAGS = {
-  REACT: {
-    name: "React",
-    class: "bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800",
-    icon: ReactIcon,
-  },
-  TAILWIND: {
-    name: "Tailwind",
-    class: "bg-cyan-100 dark:bg-cyan-900/40 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800",
-    icon: Tailwind,
-  },
-  NODE: {
-    name: "Node.js",
-    class: "bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-800",
-    icon: NodeIcon,
-  },
-  MONGODB: {
-    name: "MongoDB",
-    class: "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800",
-    icon: MongoDBIcon,
-  },
-  POSTGRESQL: {
-    name: "PostgreSQL",
-    class: "bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800",
-    icon: PostgreSQLIcon,
-  },
-  FIREBASE: {
-    name: "Firebase",
-    class: "bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-800",
-    icon: FirebaseIcon,
-  },
-  REDIS: {
-    name: "Redis",
-    class: "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800",
-    icon: RedisIcon,
-  },
-  DOCKER: {
-    name: "Docker",
-    class: "bg-sky-100 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800",
-    icon: DockerIcon,
-  },
-  EXPRESS: {
-    name: "Express.js",
-    class: "bg-gray-100 dark:bg-gray-700/40 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700",
-    icon: ExpressIcon,
-  },
-  VITE: {
-    name: "Vite",
-    class: "bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800",
-    icon: Vite,
-  },
-  NETLIFY: {
-    name: "Netlify",
-    class: "bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800",
-    icon: Netlify,
-  },
-  // Tags sin icono (texto plano)
-  TYPESCRIPT: {
-    name: "TypeScript",
-    class: "bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-200 border border-blue-200 dark:border-blue-800",
-    icon: null,
-  },
-  DOTNET: {
-    name: ".NET 8",
-    class: "bg-violet-100 dark:bg-violet-900/40 text-violet-800 dark:text-violet-200 border border-violet-200 dark:border-violet-800",
-    icon: null,
-  },
-  ASPNETCORE: {
-    name: "ASP.NET Core",
-    class: "bg-violet-100 dark:bg-violet-900/40 text-violet-800 dark:text-violet-200 border border-violet-200 dark:border-violet-800",
-    icon: null,
-  },
-  ISO27001: {
-    name: "ISO 27001",
-    class: "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800",
-    icon: null,
-  },
-  COBIT2023: {
-    name: "COBIT 2023",
-    class: "bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-800",
-    icon: null,
-  },
-  RISKMANAGEMENT: {
-    name: "Risk Management",
-    class: "bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800",
-    icon: null,
-  },
-  GRC: {
-    name: "GRC Tools",
-    class: "bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800",
-    icon: null,
-  },
-  IIS: {
-    name: "IIS",
-    class: "bg-slate-100 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700",
-    icon: null,
-  },
-  NUGET: {
-    name: "NuGet",
-    class: "bg-violet-100 dark:bg-violet-900/40 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-800",
-    icon: null,
-  },
+  REACT:      { name: "React",        class: "bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800",           icon: ReactIcon    },
+  TAILWIND:   { name: "Tailwind",     class: "bg-cyan-100 dark:bg-cyan-900/40 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800",           icon: Tailwind     },
+  NODE:       { name: "Node.js",      class: "bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-800",     icon: NodeIcon     },
+  MONGODB:    { name: "MongoDB",      class: "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800", icon: MongoDBIcon  },
+  POSTGRESQL: { name: "PostgreSQL",   class: "bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800", icon: PostgreSQLIcon },
+  FIREBASE:   { name: "Firebase",     class: "bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-800", icon: FirebaseIcon },
+  REDIS:      { name: "Redis",        class: "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800",                 icon: RedisIcon    },
+  DOCKER:     { name: "Docker",       class: "bg-sky-100 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800",                 icon: DockerIcon   },
+  EXPRESS:    { name: "Express.js",   class: "bg-gray-100 dark:bg-gray-700/40 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700",           icon: ExpressIcon  },
+  VITE:       { name: "Vite",         class: "bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800", icon: Vite        },
+  NETLIFY:    { name: "Netlify",      class: "bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800",           icon: Netlify      },
+  // Text-only tags (no icon)
+  TYPESCRIPT:    { name: "TypeScript",    class: "bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-200 border border-blue-200 dark:border-blue-800",       icon: null },
+  DOTNET:        { name: ".NET 8",        class: "bg-violet-100 dark:bg-violet-900/40 text-violet-800 dark:text-violet-200 border border-violet-200 dark:border-violet-800", icon: null },
+  ASPNETCORE:    { name: "ASP.NET Core",  class: "bg-violet-100 dark:bg-violet-900/40 text-violet-800 dark:text-violet-200 border border-violet-200 dark:border-violet-800", icon: null },
+  ISO27001:      { name: "ISO 27001",     class: "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800",             icon: null },
+  COBIT2023:     { name: "COBIT 2023",    class: "bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-800", icon: null },
+  RISKMANAGEMENT:{ name: "Risk Mgmt",     class: "bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800", icon: null },
+  GRC:           { name: "GRC Tools",     class: "bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800",       icon: null },
+  IIS:           { name: "IIS",           class: "bg-slate-100 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700", icon: null },
+  NUGET:         { name: "NuGet",         class: "bg-violet-100 dark:bg-violet-900/40 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-800", icon: null },
 };
 
+// categories: which tab(s) this project appears under
 const PROJECTS = [
   {
-    title: "Distribuidora Agrícola Sandoval",
-    description:
-      "Plataforma para la automatización de pedidos, incluyendo carrito de compras, autenticación y calificaciones. Desarrollada con React, Node.js, Express y MongoDB. Implementada con metodología Scrum y hospedada en Render.",
-    link: "https://pg-das-frontend.onrender.com/",
+    title:       "Distribuidora Agrícola Sandoval",
+    titleEn:     "Sandoval Agricultural Distributor",
+    description: "Plataforma para la automatización de pedidos: carrito de compras, autenticación y calificaciones. Desarrollada con React, Node.js, Express y MongoDB. Metodología Scrum, hospedada en Render.",
+    descriptionEn: "Order automation platform with shopping cart, authentication, and ratings. Built with React, Node.js, Express and MongoDB using Scrum methodology, hosted on Render.",
+    link:   "https://pg-das-frontend.onrender.com/",
     github: "https://github.com/Carlosmarroquin20/PG_DAS.git",
-    image: "/projects/dascommerce.webp",
-    badge: null,
+    image:  "/projects/dascommerce.webp",
+    badge:  null, badgeEn: null,
+    placeholderGradient: "", placeholderIcon: "",
+    categories: ["web"],
     tags: [TAGS.REACT, TAGS.NODE, TAGS.EXPRESS, TAGS.MONGODB, TAGS.DOCKER],
   },
   {
-    title: "Textractify",
-    description:
-      "Aplicación para el reconocimiento de imágenes y generación de descripciones en inglés y español utilizando inteligencia artificial. Desarrollada con React, Node.js, MongoDB y Firebase.",
-    link: "https://textractify-hugging-face-client.onrender.com/",
+    title:       "Textractify",
+    titleEn:     "Textractify",
+    description: "Aplicación de IA para el reconocimiento de imágenes y generación de descripciones en inglés y español. Usa React, Node.js, MongoDB y Firebase.",
+    descriptionEn: "AI application for image recognition and bilingual description generation (English & Spanish). Built with React, Node.js, MongoDB and Firebase.",
+    link:   "https://textractify-hugging-face-client.onrender.com/",
     github: "https://github.com/Frnn4268/textractify-hugging-face.git",
-    image: "/projects/textractify.webp",
-    badge: null,
+    image:  "/projects/textractify.webp",
+    badge:  null, badgeEn: null,
+    placeholderGradient: "", placeholderIcon: "",
+    categories: ["ia"],
     tags: [TAGS.REACT, TAGS.NODE, TAGS.MONGODB, TAGS.FIREBASE],
   },
   {
-    title: "GateMaster",
-    description:
-      "Sistema ERP y CRM con autenticación Single Sign-On (SSO) y control de acceso basado en roles (RBAC), utilizando Keycloak, PostgreSQL, Redis, Docker, React y Node.js.",
-    link: "https://app.gatemaster.online/",
+    title:       "GateMaster",
+    titleEn:     "GateMaster",
+    description: "Sistema ERP y CRM con SSO (Keycloak) y RBAC. Arquitectura con PostgreSQL, Redis, Docker, React y Node.js. Gestión segura de accesos y roles.",
+    descriptionEn: "ERP & CRM system with Single Sign-On (Keycloak) and Role-Based Access Control. Architecture with PostgreSQL, Redis, Docker, React and Node.js.",
+    link:   "https://app.gatemaster.online/",
     github: "https://github.com/Seminario24/GateMaster-WebApp.git",
-    image: "/projects/gatemaster.webp",
-    badge: null,
+    image:  "/projects/gatemaster.webp",
+    badge:  null, badgeEn: null,
+    placeholderGradient: "", placeholderIcon: "",
+    categories: ["seguridad", "devops"],
     tags: [TAGS.REACT, TAGS.NODE, TAGS.POSTGRESQL, TAGS.REDIS, TAGS.DOCKER],
   },
   {
-    title: "Expense Tracker Pro",
-    description:
-      "Aplicación web para gestionar gastos de manera sencilla y eficiente, con diseño moderno optimizado para dispositivos móviles y de escritorio.",
-    link: "https://expense-tracker322.netlify.app/",
+    title:       "Expense Tracker Pro",
+    titleEn:     "Expense Tracker Pro",
+    description: "Aplicación web para gestionar gastos de forma sencilla y eficiente, con diseño moderno y optimizado para móvil y escritorio.",
+    descriptionEn: "Web app for easy and efficient expense management with a modern, mobile-first design.",
+    link:   "https://expense-tracker322.netlify.app/",
     github: "https://github.com/Carlosmarroquin20/expense-tracker-pro",
-    image: "/projects/Expense.webp",
-    badge: null,
+    image:  "/projects/Expense.webp",
+    badge:  null, badgeEn: null,
+    placeholderGradient: "", placeholderIcon: "",
+    categories: ["web"],
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.VITE, TAGS.NETLIFY],
   },
   {
-    title: "Security Architecture Dashboard",
-    description:
-      "Aplicación web interactiva que visualiza una arquitectura de seguridad en capas para Terminal Server con defense-in-depth design (8 capas: Internet → Firewall Perimetral → DMZ → Firewall Interno → Autenticación → Servidor → Aplicaciones → Base de Datos). Incluye visualización de flujo de tráfico y documentación técnica de controles de seguridad por capa.",
-    link: "",
+    title:       "Security Architecture Dashboard",
+    titleEn:     "Security Architecture Dashboard",
+    description: "Aplicación interactiva que visualiza una arquitectura de seguridad en 8 capas para Terminal Server (defense-in-depth): Internet → Firewall Perimetral → DMZ → Firewall Interno → Autenticación → Servidor → Aplicaciones → Base de Datos. Documenta controles de seguridad y flujo de tráfico.",
+    descriptionEn: "Interactive web app visualizing an 8-layer Terminal Server security architecture (defense-in-depth): Internet → Perimeter Firewall → DMZ → Internal Firewall → Auth → Server → Apps → Database. Documents security controls and traffic flow per layer.",
+    link:   "",
     github: "https://github.com/Carlosmarroquin20",
-    image: "",
-    badge: "Proyecto Académico — Maestría en Seguridad Informática",
+    image:  "",
+    badge:   "Proyecto Académico — Maestría en Seguridad",
+    badgeEn: "Academic Project — Master's in Security",
     placeholderGradient: "from-red-500/20 via-orange-500/10 to-red-600/20 dark:from-red-500/30 dark:via-orange-500/20 dark:to-red-600/30",
     placeholderIcon: `<svg class="w-14 h-14 text-red-400 dark:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>`,
+    categories: ["seguridad"],
     tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND, TAGS.ISO27001],
   },
   {
-    title: "Risk Assessment Tool Integration",
-    description:
-      "Análisis y documentación de auditorías de seguridad usando SimpleRisk y Eramba Community alineados a ISO 27001:2022 y COBIT 2023. Identificación de 5+ riesgos críticos, mapeo de controles de seguridad y generación de planes de acción con métricas de mitigación.",
-    link: "",
+    title:       "Risk Assessment Tool Integration",
+    titleEn:     "Risk Assessment Tool Integration",
+    description: "Auditorías de seguridad con SimpleRisk y Eramba Community alineadas a ISO 27001:2022 y COBIT 2023. Identificación de 5+ riesgos críticos, mapeo de controles y planes de acción con métricas.",
+    descriptionEn: "Security audits using SimpleRisk and Eramba Community aligned with ISO 27001:2022 and COBIT 2023. Identified 5+ critical risks, mapped controls, and produced action plans with mitigation metrics.",
+    link:   "",
     github: "https://github.com/Carlosmarroquin20",
-    image: "",
-    badge: "Proyecto Académico",
+    image:  "",
+    badge:   "Proyecto Académico",
+    badgeEn: "Academic Project",
     placeholderGradient: "from-amber-500/20 via-orange-500/10 to-amber-600/20 dark:from-amber-500/30 dark:via-orange-500/20 dark:to-amber-600/30",
     placeholderIcon: `<svg class="w-14 h-14 text-amber-400 dark:text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>`,
+    categories: ["seguridad"],
     tags: [TAGS.ISO27001, TAGS.COBIT2023, TAGS.RISKMANAGEMENT, TAGS.GRC],
   },
   {
-    title: ".NET 8 Migration Guide",
-    description:
-      "Documentación técnica del proceso de migración de .NET Framework a .NET 8: configuración de middleware en Program.cs, patrones de dependency injection modernos, resolución de conflictos de paquetes NuGet y deployment en IIS con ASP.NET Core Hosting Bundle. Caso de estudio aplicado en entorno bancario.",
-    link: "",
+    title:       ".NET 8 Migration Guide",
+    titleEn:     ".NET 8 Migration Guide",
+    description: "Documentación técnica de migración de .NET Framework a .NET 8: middleware en Program.cs, dependency injection modernos, resolución de conflictos NuGet y deployment en IIS con ASP.NET Core Hosting Bundle.",
+    descriptionEn: "Technical documentation for migrating from .NET Framework to .NET 8: middleware in Program.cs, modern dependency injection patterns, NuGet conflict resolution and IIS deployment with ASP.NET Core Hosting Bundle.",
+    link:   "",
     github: "https://github.com/Carlosmarroquin20",
-    image: "",
-    badge: "Caso de Estudio Técnico",
+    image:  "",
+    badge:   "Caso de Estudio Técnico",
+    badgeEn: "Technical Case Study",
     placeholderGradient: "from-violet-500/20 via-purple-500/10 to-violet-600/20 dark:from-violet-500/30 dark:via-purple-500/20 dark:to-violet-600/30",
     placeholderIcon: `<svg class="w-14 h-14 text-violet-400 dark:text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>`,
+    categories: ["dotnet", "devops"],
     tags: [TAGS.DOTNET, TAGS.ASPNETCORE, TAGS.IIS, TAGS.NUGET],
   },
   {
-    title: "ClapBack",
-    description:
-      "Aplicación sencilla para enviar y recibir aplausos virtuales entre amigos, familiares o compañeros. Diseñada para generar interacciones positivas de manera rápida y divertida.",
-    link: "",
+    title:       "ClapBack",
+    titleEn:     "ClapBack",
+    description: "Aplicación para enviar y recibir aplausos virtuales entre amigos o compañeros. Rápida, divertida y enfocada en interacciones positivas.",
+    descriptionEn: "App to send and receive virtual applause among friends or coworkers. Fast, fun, and focused on positive interactions.",
+    link:   "",
     github: "",
-    image: "/projects/clapback.webp",
-    badge: null,
+    image:  "/projects/clapback.webp",
+    badge:  null, badgeEn: null,
+    placeholderGradient: "", placeholderIcon: "",
+    categories: ["web"],
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.NODE],
   },
 ];
+
+// Tab definitions
+const TABS = [
+  { key: "todos",    labelEs: "Todos",            labelEn: "All",            count: PROJECTS.length },
+  { key: "seguridad",labelEs: "Seguridad",         labelEn: "Security",       count: PROJECTS.filter(p => p.categories.includes("seguridad")).length },
+  { key: "web",      labelEs: "Web / Full-Stack",  labelEn: "Web / Full-Stack",count: PROJECTS.filter(p => p.categories.includes("web")).length },
+  { key: "dotnet",   labelEs: ".NET & Backend",    labelEn: ".NET & Backend", count: PROJECTS.filter(p => p.categories.includes("dotnet")).length },
+  { key: "ia",       labelEs: "IA",                labelEn: "AI",             count: PROJECTS.filter(p => p.categories.includes("ia")).length },
+  { key: "devops",   labelEs: "DevOps",            labelEn: "DevOps",         count: PROJECTS.filter(p => p.categories.includes("devops")).length },
+];
 ---
 
-<div class="grid gap-10 sm:gap-14">
-  {PROJECTS.map(({ image, title, description, tags, link, github, badge, placeholderGradient, placeholderIcon }) => (
-    <article class="group">
+<!-- Filter tabs -->
+<div class="flex flex-wrap gap-2 mb-8" role="tablist">
+  {TABS.map((tab) => (
+    <button
+      class="project-tab-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium border transition-all duration-200 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400"
+      data-filter={tab.key}
+      role="tab"
+      aria-selected={tab.key === "todos" ? "true" : "false"}
+    >
+      <span class="i18n-es">{tab.labelEs}</span>
+      <span class="i18n-en">{tab.labelEn}</span>
+      <span class="ml-1 opacity-60 text-[10px]">({tab.count})</span>
+    </button>
+  ))}
+</div>
+
+<!-- Project cards -->
+<div class="grid gap-10 sm:gap-14" id="projects-grid">
+  {PROJECTS.map(({ image, title, titleEn, description, descriptionEn, tags, link, github, badge, badgeEn, placeholderGradient, placeholderIcon, categories }) => (
+    <article
+      class="project-card group"
+      data-categories={categories.join(" ")}
+    >
       <div class="grid gap-6 md:grid-cols-2 md:gap-8">
 
-        <!-- Imagen o placeholder -->
+        <!-- Image or gradient placeholder -->
         <div class="relative flex flex-col items-center overflow-hidden rounded-2xl shadow-lg transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-1 border border-gray-200/50 dark:border-gray-800/50 group-hover:border-blue-300 dark:group-hover:border-blue-800">
           {image ? (
             <img
@@ -225,22 +200,30 @@ const PROJECTS = [
           ) : (
             <div class={`w-full h-56 sm:h-64 md:h-80 flex flex-col items-center justify-center bg-gradient-to-br ${placeholderGradient} bg-gray-50 dark:bg-gray-900/50`}>
               <div set:html={placeholderIcon} />
-              <span class="text-gray-500 dark:text-gray-400 text-xs mt-3 font-medium">Vista previa académica</span>
+              <span class="text-gray-500 dark:text-gray-400 text-xs mt-3 font-medium">
+                <span class="i18n-es">Vista previa académica</span>
+                <span class="i18n-en">Academic preview</span>
+              </span>
             </div>
           )}
           <div class="absolute inset-0 bg-gradient-to-t from-black/0 via-transparent to-black/0 group-hover:from-black/10 transition-all duration-300 pointer-events-none"></div>
         </div>
 
-        <!-- Contenido -->
+        <!-- Content -->
         <div class="flex flex-col justify-between">
           <div>
-            {badge && (
-              <span class="inline-block mb-3 px-3 py-1 text-xs font-semibold rounded-full bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-700">
-                🎓 {badge}
-              </span>
+            {(badge || badgeEn) && (
+              <div class="mb-3">
+                {badge && <span class="i18n-es inline-block px-3 py-1 text-xs font-semibold rounded-full bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-700">🎓 {badge}</span>}
+                {badgeEn && <span class="i18n-en inline-block px-3 py-1 text-xs font-semibold rounded-full bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-700">🎓 {badgeEn}</span>}
+              </div>
             )}
-            <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-3">{title}</h3>
-            <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-5 text-sm sm:text-base">{description}</p>
+            <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-3">
+              <span class="i18n-es">{title}</span>
+              <span class="i18n-en">{titleEn}</span>
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-5 text-sm sm:text-base i18n-es-block">{description}</p>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-5 text-sm sm:text-base i18n-en-block">{descriptionEn}</p>
           </div>
 
           <div>
@@ -257,13 +240,15 @@ const PROJECTS = [
               {github && (
                 <LinkButton href={github}>
                   <GitHub class="size-4" />
-                  Código
+                  <span class="i18n-es">Código</span>
+                  <span class="i18n-en">Code</span>
                 </LinkButton>
               )}
               {link && (
                 <LinkButton href={link}>
                   <Link class="size-4" />
-                  Ver proyecto
+                  <span class="i18n-es">Ver proyecto</span>
+                  <span class="i18n-en">View project</span>
                 </LinkButton>
               )}
             </div>
@@ -273,3 +258,39 @@ const PROJECTS = [
     </article>
   ))}
 </div>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const tabBtns = document.querySelectorAll<HTMLButtonElement>(".project-tab-btn");
+    const cards   = document.querySelectorAll<HTMLElement>(".project-card");
+
+    function setFilter(filter: string) {
+      // Update tab active styles
+      tabBtns.forEach((btn) => {
+        const isActive = btn.dataset.filter === filter;
+        btn.setAttribute("aria-selected", isActive ? "true" : "false");
+        btn.classList.toggle("bg-blue-600",            isActive);
+        btn.classList.toggle("dark:bg-blue-600",       isActive);
+        btn.classList.toggle("text-white",             isActive);
+        btn.classList.toggle("border-blue-600",        isActive);
+        btn.classList.toggle("dark:border-blue-600",   isActive);
+        btn.classList.toggle("text-gray-600",          !isActive);
+        btn.classList.toggle("dark:text-gray-300",     !isActive);
+      });
+
+      // Show / hide project cards
+      cards.forEach((card) => {
+        const cats = card.dataset.categories?.split(" ") ?? [];
+        card.style.display =
+          filter === "todos" || cats.includes(filter) ? "" : "none";
+      });
+    }
+
+    tabBtns.forEach((btn) => {
+      btn.addEventListener("click", () => setFilter(btn.dataset.filter ?? "todos"));
+    });
+
+    // Initialise with "todos" active
+    setFilter("todos");
+  });
+</script>

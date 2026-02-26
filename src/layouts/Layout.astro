@@ -23,6 +23,16 @@ const { description, title } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
+
+    <!-- Anti-flash: apply saved language BEFORE first paint -->
+    <script is:inline>
+      (function () {
+        try {
+          var lang = localStorage.getItem("portfolio-lang") || "es";
+          if (lang === "en") document.documentElement.classList.add("lang-en");
+        } catch (e) {}
+      })();
+    </script>
   </head>
 
   <body class="relative text-black dark:text-white">
@@ -35,6 +45,45 @@ const { description, title } = Astro.props
     <Header />
     <slot />
     <Footer />
+
+    <!-- Language toggle: global function + view-transition re-apply -->
+    <script>
+      function applyLang(lang: string) {
+        if (lang === "en") {
+          document.documentElement.classList.add("lang-en");
+        } else {
+          document.documentElement.classList.remove("lang-en");
+        }
+        // Swap bilingual CV download links
+        document.querySelectorAll("[data-cv-es]").forEach((el) => {
+          const link = el as HTMLAnchorElement;
+          const href =
+            link.getAttribute(`data-cv-${lang}`) ||
+            link.getAttribute("data-cv-es") ||
+            "";
+          link.setAttribute("href", href);
+          link.setAttribute("download", href.split("/").pop() || "");
+        });
+      }
+
+      (window as any).toggleLang = function () {
+        const newLang = document.documentElement.classList.contains("lang-en")
+          ? "es"
+          : "en";
+        try {
+          localStorage.setItem("portfolio-lang", newLang);
+        } catch (e) {}
+        applyLang(newLang);
+      };
+
+      // Re-apply after Astro view transitions
+      document.addEventListener("astro:page-load", () => {
+        try {
+          applyLang(localStorage.getItem("portfolio-lang") || "es");
+        } catch (e) {}
+      });
+    </script>
+
     <style is:global>
       :root {
         color-scheme: light dark;
@@ -56,7 +105,7 @@ const { description, title } = Astro.props
 
       @media (max-width: 768px) {
         body {
-          padding-top: 6.25rem;
+          padding-top: 5rem;
         }
       }
 
@@ -71,6 +120,18 @@ const { description, title } = Astro.props
           color: rgba(255, 255, 255, 0.9);
         }
       }
+
+      /* ── i18n: CSS-driven language toggle ────────────────── */
+      .i18n-en            { display: none; }
+      .i18n-en-block      { display: none; }
+      html.lang-en .i18n-es       { display: none; }
+      html.lang-en .i18n-en       { display: inline; }
+      html.lang-en .i18n-es-block { display: none; }
+      html.lang-en .i18n-en-block { display: block; }
+
+      /* ── Scrollbar hide ───────────────────────────────────── */
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
       #header-nav {
         animation: blur linear both 0.5s;

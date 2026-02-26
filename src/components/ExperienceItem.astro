@@ -3,52 +3,48 @@ import LinkInline from "./LinkInline.astro"
 
 interface Props {
   title: string
+  titleEn?: string
   company: string
   description: string
+  descriptionEn?: string
   link?: string
   date: string
+  dateEn?: string
 }
 
-const { title, company, description, link, date } = Astro.props
+const { title, titleEn, company, description, descriptionEn, link, date, dateEn } = Astro.props
 ---
 
-<div
-  class="relative md:pl-8 pb-12 last:pb-0"
->
+<div class="relative md:pl-8 pb-12 last:pb-0">
   <div class="absolute -left-0.5 top-0 h-4 w-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 ring-4 ring-white dark:ring-slate-950 shadow-lg md:left-[-26px]"></div>
 
-  <div class="space-y-2">
-    <h3 class="text-xl font-bold text-gray-900 dark:text-white">{title}</h3>
+  <div class="space-y-1">
+    <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+      <span class="i18n-es">{title}</span>
+      {titleEn && <span class="i18n-en">{titleEn}</span>}
+    </h3>
     <p class="text-base font-semibold text-blue-600 dark:text-blue-400">{company}</p>
-    <time class="text-sm text-gray-600 dark:text-gray-400 font-medium">{date}</time>
+    <time class="text-sm text-gray-600 dark:text-gray-400 font-medium">
+      <span class="i18n-es">{date}</span>
+      <span class="i18n-en">{dateEn ?? date}</span>
+    </time>
   </div>
 
-  <p class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">
-    {description}
-  </p>
+  <div class="mt-3">
+    <p class="i18n-es-block text-gray-600 dark:text-gray-300 leading-relaxed">{description}</p>
+    {descriptionEn && <p class="i18n-en-block text-gray-600 dark:text-gray-300 leading-relaxed">{descriptionEn}</p>}
+  </div>
 
-  {
-    link && (
-      <div class="mt-4">
-        <LinkInline href={link}>
-          Saber más
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-4 h-4"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <>
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M9 6l6 6l-6 6" />
-            </>
-          </svg>
-        </LinkInline>
-      </div>
-    )
-  }
+  {link && (
+    <div class="mt-4">
+      <LinkInline href={link}>
+        <span class="i18n-es">Saber más</span>
+        <span class="i18n-en">Learn more</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M9 6l6 6l-6 6" />
+        </svg>
+      </LinkInline>
+    </div>
+  )}
 </div>

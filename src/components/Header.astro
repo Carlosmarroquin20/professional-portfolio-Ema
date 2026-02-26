@@ -1,37 +1,14 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro"
+import LanguageToggle from "./LanguageToggle.astro"
 
 const navItems = [
-  {
-    title: "Experiencia",
-    label: "experiencia",
-    url: "/#experiencia",
-  },
-  {
-    title: "Proyectos",
-    label: "proyectos",
-    url: "/#proyectos",
-  },
-  {
-    title: "Skills",
-    label: "skills",
-    url: "/#skills",
-  },
-  {
-    title: "Mi Valor",
-    label: "valor",
-    url: "/#valor",
-  },
-  {
-    title: "Sobre mí",
-    label: "sobre-mi",
-    url: "/#sobre-mi",
-  },
-  {
-    title: "Contacto",
-    label: "contacto",
-    url: "mailto:carlosema322@gmail.com",
-  },
+  { es: "Experiencia", en: "Experience", label: "experiencia", url: "/#experiencia" },
+  { es: "Proyectos",   en: "Projects",   label: "proyectos",   url: "/#proyectos"  },
+  { es: "Skills",      en: "Skills",     label: "skills",      url: "/#skills"     },
+  { es: "Mi Valor",    en: "My Value",   label: "valor",       url: "/#valor"      },
+  { es: "Sobre mí",    en: "About",      label: "sobre-mi",    url: "/#sobre-mi"   },
+  { es: "Contacto",    en: "Contact",    label: "contacto",    url: "mailto:carlosema322@gmail.com" },
 ]
 ---
 
@@ -41,22 +18,25 @@ const navItems = [
   <nav
     id="header-nav"
     aria-label="Navegación principal"
-    class="flex w-full max-w-5xl items-center gap-2 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-gray-200/50 dark:border-gray-800/50 shadow-lg px-4 py-3 text-sm font-medium text-gray-600 dark:text-gray-300"
+    class="flex w-full max-w-5xl items-center gap-2 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-gray-200/50 dark:border-gray-800/50 shadow-lg px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300"
   >
-    <div class="flex flex-1 items-center justify-center gap-0.5 sm:gap-1 min-w-0 overflow-x-auto scrollbar-none">
-      {
-        navItems.map((link) => (
-          <a
-            class="relative block whitespace-nowrap px-2 sm:px-3 py-2 transition duration-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-950/30 text-[11px] sm:text-xs md:text-sm font-medium"
-            aria-label={link.label}
-            href={link.url}
-          >
-            {link.title}
-          </a>
-        ))
-      }
+    <!-- Nav links – horizontal scroll on xs screens -->
+    <div class="flex flex-1 items-center justify-center gap-0 no-scrollbar overflow-x-auto min-w-0">
+      {navItems.map((link) => (
+        <a
+          class="relative block whitespace-nowrap px-2 sm:px-2.5 py-2 transition duration-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-950/30 text-[10px] sm:text-xs md:text-sm"
+          aria-label={link.label}
+          href={link.url}
+        >
+          <span class="i18n-es">{link.es}</span>
+          <span class="i18n-en">{link.en}</span>
+        </a>
+      ))}
     </div>
-    <div class="flex items-center md:border-l md:border-gray-200/50 dark:md:border-gray-800/50 md:pl-3 md:ml-2">
+
+    <!-- Controls: language + theme -->
+    <div class="flex items-center gap-1.5 border-l border-gray-200/60 dark:border-gray-700/60 pl-2 ml-1 flex-shrink-0">
+      <LanguageToggle />
       <ThemeToggle />
     </div>
   </nav>
@@ -65,12 +45,12 @@ const navItems = [
 <script>
   document.addEventListener("astro:page-load", () => {
     const sections = document.querySelectorAll("section")
-    const navItems = document.querySelectorAll("header nav a")
+    const navLinks = document.querySelectorAll("header nav a")
 
     const callback = (entries: any[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          navItems.forEach((item) => {
+          navLinks.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
               item.classList.add("text-blue-500")
             } else {
@@ -87,18 +67,13 @@ const navItems = [
       threshold: 0.3,
     })
 
-    sections.forEach((section) => {
-      observer.observe(section)
-    })
+    sections.forEach((section) => observer.observe(section))
 
-    // Cleanup function
     document.onvisibilitychange = () => {
       if (document.visibilityState === "hidden") {
         observer.disconnect()
       } else {
-        sections.forEach((section) => {
-          observer.observe(section)
-        })
+        sections.forEach((section) => observer.observe(section))
       }
     }
   })

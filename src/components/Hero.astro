@@ -14,73 +14,81 @@ import SocialPill from "@/components/SocialPill.astro";
         src="/Ema.webp"
         alt={personalImageAlt}
       />
-      <Badge>Disponible para trabajar</Badge>
+      <Badge>
+        <span class="i18n-es">Disponible para trabajar</span>
+        <span class="i18n-en">Available for work</span>
+      </Badge>
     </div>
 
-    <div class="flex flex-col gap-3 items-center md:items-start md:pt-2">
-      <div class="flex flex-wrap gap-2 justify-center md:justify-start">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-violet-100 dark:bg-violet-900/40 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-700">
-          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          .NET Developer
-        </span>
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-700">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-          Seguridad Informática
-        </span>
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-cyan-100 dark:bg-cyan-900/40 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-700">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
-          Cloud & DevOps
-        </span>
-      </div>
+    <!-- Skill pills -->
+    <div class="flex flex-wrap gap-2 justify-center md:justify-start md:pt-2">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-violet-100 dark:bg-violet-900/40 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-700">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+        .NET Developer
+      </span>
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-700">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        <span class="i18n-es">Seguridad Informática</span>
+        <span class="i18n-en">Information Security</span>
+      </span>
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-cyan-100 dark:bg-cyan-900/40 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-700">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+        Cloud & DevOps
+      </span>
     </div>
   </div>
 
   <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-5 leading-tight">
-    Hey, soy <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Emanuel Marroquín</span>
+    <span class="i18n-es">Hey, soy </span><span class="i18n-en">Hey, I'm </span><span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Emanuel Marroquín</span>
   </h1>
 
-  <p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-3 leading-relaxed max-w-3xl">
+  <!-- Español -->
+  <p class="i18n-es-block text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-3 leading-relaxed max-w-3xl">
     <strong class="text-violet-600 dark:text-violet-400 font-semibold">Desarrollador de Software .NET</strong> con experiencia en sistemas bancarios de alta disponibilidad,
     actualmente cursando una <strong class="text-blue-600 dark:text-blue-400 font-semibold">Maestría en Seguridad Informática</strong>.
   </p>
-  <p class="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed max-w-3xl">
+  <p class="i18n-es-block text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed max-w-3xl">
     Especializado en desarrollo enterprise, deployment en entornos cloud-native (<strong class="text-cyan-600 dark:text-cyan-400">OpenShift / Kubernetes</strong>)
     y seguridad aplicada desde el diseño. Combinación única de <strong class="text-purple-600 dark:text-purple-400">desarrollo + seguridad + cloud</strong>.
+  </p>
+
+  <!-- English -->
+  <p class="i18n-en-block text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-3 leading-relaxed max-w-3xl">
+    <strong class="text-violet-600 dark:text-violet-400 font-semibold">.NET Software Developer</strong> with experience in high-availability banking systems,
+    currently pursuing a <strong class="text-blue-600 dark:text-blue-400 font-semibold">Master's in Information Security</strong>.
+  </p>
+  <p class="i18n-en-block text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed max-w-3xl">
+    Specialized in enterprise development, cloud-native deployment (<strong class="text-cyan-600 dark:text-cyan-400">OpenShift / Kubernetes</strong>)
+    and security-by-design principles. A rare combination of <strong class="text-purple-600 dark:text-purple-400">development + security + cloud</strong>.
   </p>
 
   <nav class="flex flex-wrap justify-center md:justify-start gap-3">
     <SocialPill href="mailto:carlosema322@gmail.com">
       <MailIcon class="size-4" />
-      Contáctame
+      <span class="i18n-es">Contáctame</span>
+      <span class="i18n-en">Contact me</span>
     </SocialPill>
     <SocialPill href="https://www.linkedin.com/in/emanuel-marroquin-160488321/">
       <LinkedInIcon class="size-4" />
       LinkedIn
     </SocialPill>
-    <SocialPill href="/CV-Emanuel-Marroquin.pdf" download="CV-Emanuel-Marroquin.pdf">
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        class="size-4"
-      >
-        <path
-          opacity="0.5"
-          d="M3 15C3 17.8284 3 19.2426 3.87868 20.1213C4.75736 21 6.17157 21 9 21H15C17.8284 21 19.2426 21 20.1213 20.1213C21 19.2426 21 17.8284 21 15"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-        <path
-          d="M12 3V16M12 16L16 11.625M12 16L8 11.625"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
+    <!--
+      Bilingual CV: data-cv-es / data-cv-en are swapped by the global toggleLang() in Layout.astro.
+      Add /CV-Emanuel-Marroquin-EN.pdf to /public for the English version.
+    -->
+    <a
+      href="/CV-Emanuel-Marroquin.pdf"
+      download="CV-Emanuel-Marroquin.pdf"
+      data-cv-es="/CV-Emanuel-Marroquin.pdf"
+      data-cv-en="/CV-Emanuel-Marroquin-EN.pdf"
+      class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-200 text-sm font-medium hover:bg-blue-50 dark:hover:bg-blue-950/30 hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300"
+    >
+      <svg viewBox="0 0 24 24" fill="none" class="size-4">
+        <path opacity="0.5" d="M3 15C3 17.8284 3 19.2426 3.87868 20.1213C4.75736 21 6.17157 21 9 21H15C17.8284 21 19.2426 21 20.1213 20.1213C21 19.2426 21 17.8284 21 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 3V16M12 16L16 11.625M12 16L8 11.625" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      Descargar CV
-    </SocialPill>
+      <span class="i18n-es">Descargar CV</span>
+      <span class="i18n-en">Download CV</span>
+    </a>
   </nav>
 </div>
