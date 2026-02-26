@@ -70,8 +70,53 @@ const TAGS = {
     class: "bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800",
     icon: Netlify,
   },
+  // Tags sin icono (texto plano)
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-200 border border-blue-200 dark:border-blue-800",
+    icon: null,
+  },
+  DOTNET: {
+    name: ".NET 8",
+    class: "bg-violet-100 dark:bg-violet-900/40 text-violet-800 dark:text-violet-200 border border-violet-200 dark:border-violet-800",
+    icon: null,
+  },
+  ASPNETCORE: {
+    name: "ASP.NET Core",
+    class: "bg-violet-100 dark:bg-violet-900/40 text-violet-800 dark:text-violet-200 border border-violet-200 dark:border-violet-800",
+    icon: null,
+  },
+  ISO27001: {
+    name: "ISO 27001",
+    class: "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800",
+    icon: null,
+  },
+  COBIT2023: {
+    name: "COBIT 2023",
+    class: "bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-800",
+    icon: null,
+  },
+  RISKMANAGEMENT: {
+    name: "Risk Management",
+    class: "bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800",
+    icon: null,
+  },
+  GRC: {
+    name: "GRC Tools",
+    class: "bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800",
+    icon: null,
+  },
+  IIS: {
+    name: "IIS",
+    class: "bg-slate-100 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700",
+    icon: null,
+  },
+  NUGET: {
+    name: "NuGet",
+    class: "bg-violet-100 dark:bg-violet-900/40 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-800",
+    icon: null,
+  },
 };
-
 
 const PROJECTS = [
   {
@@ -81,15 +126,17 @@ const PROJECTS = [
     link: "https://pg-das-frontend.onrender.com/",
     github: "https://github.com/Carlosmarroquin20/PG_DAS.git",
     image: "/projects/dascommerce.webp",
+    badge: null,
     tags: [TAGS.REACT, TAGS.NODE, TAGS.EXPRESS, TAGS.MONGODB, TAGS.DOCKER],
   },
   {
     title: "Textractify",
     description:
-      "Aplicación para el reconocimiento de imágenes y generación de descripciones en inglés y español utilizando inteligencia artificial. Desarrollada con React, Node.js, MongoDB y Firebase. Implementada en Render.",
+      "Aplicación para el reconocimiento de imágenes y generación de descripciones en inglés y español utilizando inteligencia artificial. Desarrollada con React, Node.js, MongoDB y Firebase.",
     link: "https://textractify-hugging-face-client.onrender.com/",
     github: "https://github.com/Frnn4268/textractify-hugging-face.git",
     image: "/projects/textractify.webp",
+    badge: null,
     tags: [TAGS.REACT, TAGS.NODE, TAGS.MONGODB, TAGS.FIREBASE],
   },
   {
@@ -99,16 +146,54 @@ const PROJECTS = [
     link: "https://app.gatemaster.online/",
     github: "https://github.com/Seminario24/GateMaster-WebApp.git",
     image: "/projects/gatemaster.webp",
+    badge: null,
     tags: [TAGS.REACT, TAGS.NODE, TAGS.POSTGRESQL, TAGS.REDIS, TAGS.DOCKER],
   },
   {
     title: "Expense Tracker Pro",
     description:
-      "Es una aplicación web diseñada para gestionar tus gastos de manera sencilla, eficiente y con un diseño moderno y atractivo, optimizado para dispositivos móviles y de escritorio.",
+      "Aplicación web para gestionar gastos de manera sencilla y eficiente, con diseño moderno optimizado para dispositivos móviles y de escritorio.",
     link: "https://expense-tracker322.netlify.app/",
     github: "https://github.com/Carlosmarroquin20/expense-tracker-pro",
     image: "/projects/Expense.webp",
+    badge: null,
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.VITE, TAGS.NETLIFY],
+  },
+  {
+    title: "Security Architecture Dashboard",
+    description:
+      "Aplicación web interactiva que visualiza una arquitectura de seguridad en capas para Terminal Server con defense-in-depth design (8 capas: Internet → Firewall Perimetral → DMZ → Firewall Interno → Autenticación → Servidor → Aplicaciones → Base de Datos). Incluye visualización de flujo de tráfico y documentación técnica de controles de seguridad por capa.",
+    link: "",
+    github: "https://github.com/Carlosmarroquin20",
+    image: "",
+    badge: "Proyecto Académico — Maestría en Seguridad Informática",
+    placeholderGradient: "from-red-500/20 via-orange-500/10 to-red-600/20 dark:from-red-500/30 dark:via-orange-500/20 dark:to-red-600/30",
+    placeholderIcon: `<svg class="w-14 h-14 text-red-400 dark:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>`,
+    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND, TAGS.ISO27001],
+  },
+  {
+    title: "Risk Assessment Tool Integration",
+    description:
+      "Análisis y documentación de auditorías de seguridad usando SimpleRisk y Eramba Community alineados a ISO 27001:2022 y COBIT 2023. Identificación de 5+ riesgos críticos, mapeo de controles de seguridad y generación de planes de acción con métricas de mitigación.",
+    link: "",
+    github: "https://github.com/Carlosmarroquin20",
+    image: "",
+    badge: "Proyecto Académico",
+    placeholderGradient: "from-amber-500/20 via-orange-500/10 to-amber-600/20 dark:from-amber-500/30 dark:via-orange-500/20 dark:to-amber-600/30",
+    placeholderIcon: `<svg class="w-14 h-14 text-amber-400 dark:text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>`,
+    tags: [TAGS.ISO27001, TAGS.COBIT2023, TAGS.RISKMANAGEMENT, TAGS.GRC],
+  },
+  {
+    title: ".NET 8 Migration Guide",
+    description:
+      "Documentación técnica del proceso de migración de .NET Framework a .NET 8: configuración de middleware en Program.cs, patrones de dependency injection modernos, resolución de conflictos de paquetes NuGet y deployment en IIS con ASP.NET Core Hosting Bundle. Caso de estudio aplicado en entorno bancario.",
+    link: "",
+    github: "https://github.com/Carlosmarroquin20",
+    image: "",
+    badge: "Caso de Estudio Técnico",
+    placeholderGradient: "from-violet-500/20 via-purple-500/10 to-violet-600/20 dark:from-violet-500/30 dark:via-purple-500/20 dark:to-violet-600/30",
+    placeholderIcon: `<svg class="w-14 h-14 text-violet-400 dark:text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>`,
+    tags: [TAGS.DOTNET, TAGS.ASPNETCORE, TAGS.IIS, TAGS.NUGET],
   },
   {
     title: "ClapBack",
@@ -117,51 +202,67 @@ const PROJECTS = [
     link: "",
     github: "",
     image: "/projects/clapback.webp",
+    badge: null,
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.NODE],
   },
 ];
 ---
 
-<div class="grid gap-12">
-  {PROJECTS.map(({ image, title, description, tags, link, github }) => (
+<div class="grid gap-10 sm:gap-14">
+  {PROJECTS.map(({ image, title, description, tags, link, github, badge, placeholderGradient, placeholderIcon }) => (
     <article class="group">
       <div class="grid gap-6 md:grid-cols-2 md:gap-8">
-        <div class="relative flex flex-col items-center overflow-hidden rounded-2xl shadow-lg transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 border border-gray-200/50 dark:border-gray-800/50 group-hover:border-blue-300 dark:group-hover:border-blue-800">
-          <img 
-            alt={title} 
-            class="w-full h-64 md:h-80 object-cover transition duration-500 group-hover:scale-105" 
-            loading="lazy" 
-            src={image} 
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/0 via-transparent to-black/0 group-hover:from-black/10 transition-all duration-300"></div>
+
+        <!-- Imagen o placeholder -->
+        <div class="relative flex flex-col items-center overflow-hidden rounded-2xl shadow-lg transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-1 border border-gray-200/50 dark:border-gray-800/50 group-hover:border-blue-300 dark:group-hover:border-blue-800">
+          {image ? (
+            <img
+              alt={title}
+              class="w-full h-56 sm:h-64 md:h-80 object-cover transition duration-500 group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          ) : (
+            <div class={`w-full h-56 sm:h-64 md:h-80 flex flex-col items-center justify-center bg-gradient-to-br ${placeholderGradient} bg-gray-50 dark:bg-gray-900/50`}>
+              <div set:html={placeholderIcon} />
+              <span class="text-gray-500 dark:text-gray-400 text-xs mt-3 font-medium">Vista previa académica</span>
+            </div>
+          )}
+          <div class="absolute inset-0 bg-gradient-to-t from-black/0 via-transparent to-black/0 group-hover:from-black/10 transition-all duration-300 pointer-events-none"></div>
         </div>
 
+        <!-- Contenido -->
         <div class="flex flex-col justify-between">
           <div>
-            <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">{title}</h3>
-            <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 text-lg">{description}</p>
+            {badge && (
+              <span class="inline-block mb-3 px-3 py-1 text-xs font-semibold rounded-full bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-700">
+                🎓 {badge}
+              </span>
+            )}
+            <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-3">{title}</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-5 text-sm sm:text-base">{description}</p>
           </div>
 
           <div>
-            <div class="flex flex-wrap gap-2 mb-6">
+            <div class="flex flex-wrap gap-2 mb-5">
               {tags.map((tag) => (
-                <span class={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-all duration-300 hover:scale-105 ${tag.class}`}>
-                  <tag.icon class="w-4 h-4" />
+                <span class={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-medium transition-all duration-300 hover:scale-105 ${tag.class}`}>
+                  {tag.icon && <tag.icon class="w-3.5 h-3.5" />}
                   {tag.name}
                 </span>
               ))}
             </div>
 
-            <div class="flex items-end gap-4 flex-wrap">
+            <div class="flex items-center gap-3 flex-wrap">
               {github && (
                 <LinkButton href={github}>
-                  <GitHub class="size-5" />
+                  <GitHub class="size-4" />
                   Código
                 </LinkButton>
               )}
               {link && (
                 <LinkButton href={link}>
-                  <Link class="size-5" />
+                  <Link class="size-4" />
                   Ver proyecto
                 </LinkButton>
               )}

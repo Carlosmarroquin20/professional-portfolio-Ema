@@ -7,28 +7,48 @@ import SocialPill from "@/components/SocialPill.astro";
 ---
 
 <div id="inicio" class="max-w-4xl mx-auto">
-  <div class="flex flex-col items-center gap-4 mb-8 text-center md:flex-row md:items-center md:justify-between md:text-left md:gap-8">
-    <img
-      class="rounded-2xl shadow-2xl size-20 ring-2 ring-blue-200 dark:ring-blue-900/50 w-40 h-40 md:w-72 md:h-72 object-cover"
-      src="/Ema.webp"
-      alt={personalImageAlt}
-    />
-    <Badge>Disponible para trabajar</Badge>
+  <div class="flex flex-col items-center gap-6 mb-8 text-center md:flex-row md:items-start md:justify-between md:text-left md:gap-8">
+    <div class="flex flex-col items-center md:items-start gap-3 flex-shrink-0">
+      <img
+        class="rounded-2xl shadow-2xl ring-2 ring-blue-200 dark:ring-blue-900/50 w-36 h-36 sm:w-44 sm:h-44 md:w-64 md:h-64 object-cover"
+        src="/Ema.webp"
+        alt={personalImageAlt}
+      />
+      <Badge>Disponible para trabajar</Badge>
+    </div>
+
+    <div class="flex flex-col gap-3 items-center md:items-start md:pt-2">
+      <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-violet-100 dark:bg-violet-900/40 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-700">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          .NET Developer
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-700">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+          Seguridad Informática
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-cyan-100 dark:bg-cyan-900/40 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-700">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
+          Cloud & DevOps
+        </span>
+      </div>
+    </div>
   </div>
-  <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 leading-tight">
+
+  <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-5 leading-tight">
     Hey, soy <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Emanuel Marroquín</span>
   </h1>
-  <p
-    class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-4 leading-relaxed max-w-3xl mx-auto md:mx-0"
-  >
-    Ingeniero en Sistemas y <strong class="text-blue-600 dark:text-blue-400 font-semibold">Desarrollador Full-Stack</strong> con pasión por crear soluciones innovadoras que transforman ideas en impacto real.
+
+  <p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-3 leading-relaxed max-w-3xl">
+    <strong class="text-violet-600 dark:text-violet-400 font-semibold">Desarrollador de Software .NET</strong> con experiencia en sistemas bancarios de alta disponibilidad,
+    actualmente cursando una <strong class="text-blue-600 dark:text-blue-400 font-semibold">Maestría en Seguridad Informática</strong>.
   </p>
-  <p
-    class="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed max-w-3xl mx-auto md:mx-0"
-  >
-    Especializado en desarrollar <strong class="text-purple-600 dark:text-purple-400 font-semibold">aplicaciones escalables y modernas</strong> que resuelven desafíos complejos con creatividad y precisión.
+  <p class="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed max-w-3xl">
+    Especializado en desarrollo enterprise, deployment en entornos cloud-native (<strong class="text-cyan-600 dark:text-cyan-400">OpenShift / Kubernetes</strong>)
+    y seguridad aplicada desde el diseño. Combinación única de <strong class="text-purple-600 dark:text-purple-400">desarrollo + seguridad + cloud</strong>.
   </p>
-  <nav class="flex flex-wrap justify-center gap-3 mt-8">
+
+  <nav class="flex flex-wrap justify-center md:justify-start gap-3">
     <SocialPill href="mailto:carlosema322@gmail.com">
       <MailIcon class="size-4" />
       Contáctame
@@ -43,9 +63,6 @@ import SocialPill from "@/components/SocialPill.astro";
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         class="size-4"
-        style="transition: stroke 0.3s ease;"
-        onmouseover="this.style.stroke='black';"
-        onmouseout="this.style.stroke='white';"
       >
         <path
           opacity="0.5"
