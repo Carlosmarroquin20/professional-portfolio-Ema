@@ -42,6 +42,50 @@ const { description, title } = Astro.props
       dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900/50 dark:to-slate-950"
     >
     </div>
+
+    <!-- Ambient cursor spotlight -->
+    <div
+      id="cursor-spotlight"
+      class="fixed inset-0 z-[-1] pointer-events-none transition-opacity duration-500"
+      style="opacity: 0;"
+    >
+    </div>
+    <script>
+      (function () {
+        const spotlight = document.getElementById("cursor-spotlight");
+        if (!spotlight) return;
+
+        const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (!canHover || reducedMotion) return;
+
+        let x = window.innerWidth / 2;
+        let y = window.innerHeight / 2;
+        let raf: number | null = null;
+
+        function paint() {
+          const isDark = document.documentElement.classList.contains("dark") ||
+            window.matchMedia("(prefers-color-scheme: dark)").matches;
+          const color = isDark ? "99, 102, 241" : "59, 130, 246";
+          const alpha = isDark ? 0.30 : 0.16;
+          spotlight!.style.background =
+            `radial-gradient(750px circle at ${x}px ${y}px, rgba(${color}, ${alpha}), transparent 55%)`;
+          spotlight!.style.opacity = "1";
+          raf = null;
+        }
+
+        window.addEventListener("mousemove", (e) => {
+          x = e.clientX;
+          y = e.clientY;
+          if (raf === null) raf = requestAnimationFrame(paint);
+        });
+
+        window.addEventListener("mouseleave", () => {
+          spotlight!.style.opacity = "0";
+        });
+      })();
+    </script>
+
     <Header />
     <slot />
     <Footer />
