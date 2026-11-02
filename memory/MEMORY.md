@@ -3,7 +3,7 @@
 ## Project Overview
 - **Type**: Astro portfolio website
 - **Owner**: Emanuel Marroquín — .NET Developer + Security Informatics student
-- **Profile**: Female .NET developer, banking experience, Maestría en Seguridad Informática (UMG, in progress)
+- **Profile**: .NET developer, banking experience, Maestría en Seguridad Informática (UMG, in progress)
 - **Target**: International recruiters, fintech, digital banking
 
 ## Tech Stack
