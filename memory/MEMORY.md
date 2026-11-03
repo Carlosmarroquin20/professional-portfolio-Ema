@@ -43,7 +43,6 @@ Experiencia | Proyectos | Skills | Mi Valor | Sobre mí | Contacto
 - `window.toggleLang()` defined in Layout.astro, called by `LanguageToggle.astro`
 - Language stored in `localStorage['portfolio-lang']` ('es' or 'en')
 - CV download: `data-cv-es="/CV-Emanuel-Marroquin.pdf"` + `data-cv-en="/CV-Emanuel-Marroquin-EN.pdf"` on `<a>` tag — toggled by `toggleLang()`
-- **TODO**: Add `/public/CV-Emanuel-Marroquin-EN.pdf` for English CV
 
 ## Project Tabs (Projects.astro)
 - Each project has `categories: string[]` (e.g. ["seguridad", "devops"])
