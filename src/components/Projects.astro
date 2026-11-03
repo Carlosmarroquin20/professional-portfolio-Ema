@@ -14,6 +14,30 @@ import LinkButton from "./LinkButton.astro";
 import Vite from "./icons/Vite.astro";
 import Netlify from "./icons/Netlify.astro";
 import NextJSIcon from "./icons/NextJS.astro";
+import TypeScriptIcon from "./icons/TypeScript.astro";
+import DotNetIcon from "./icons/DotNet.astro";
+import PythonIcon from "./icons/Python.astro";
+import FastAPIIcon from "./icons/FastAPI.astro";
+import KubernetesIcon from "./icons/Kubernetes.astro";
+import AWSIcon from "./icons/AWS.astro";
+import TerraformIcon from "./icons/Terraform.astro";
+import LangGraphIcon from "./icons/LangGraph.astro";
+import DuckDBIcon from "./icons/DuckDB.astro";
+import DbtIcon from "./icons/Dbt.astro";
+import AirflowIcon from "./icons/Airflow.astro";
+import StreamlitIcon from "./icons/Streamlit.astro";
+import RabbitMQIcon from "./icons/RabbitMQ.astro";
+import GoIcon from "./icons/Go.astro";
+import OllamaIcon from "./icons/Ollama.astro";
+import WebGPUIcon from "./icons/WebGPU.astro";
+import NuGetIcon from "./icons/NuGet.astro";
+import ShieldCheckIcon from "./icons/ShieldCheck.astro";
+import BadgeCheckIcon from "./icons/BadgeCheck.astro";
+import WarningIcon from "./icons/Warning.astro";
+import ClipboardCheckIcon from "./icons/ClipboardCheck.astro";
+import SearchIcon from "./icons/Search.astro";
+import ServerIcon from "./icons/Server.astro";
+import DocumentReportIcon from "./icons/DocumentReport.astro";
 
 const TAGS = {
   REACT:      { name: "React",        class: "bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800",           icon: ReactIcon    },
@@ -27,34 +51,33 @@ const TAGS = {
   EXPRESS:    { name: "Express.js",   class: "bg-gray-100 dark:bg-gray-700/40 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700",           icon: ExpressIcon  },
   VITE:       { name: "Vite",         class: "bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800", icon: Vite        },
   NETLIFY:    { name: "Netlify",      class: "bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800",           icon: Netlify      },
-  // Text-only tags (no icon)
-  TYPESCRIPT:    { name: "TypeScript",    class: "bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-200 border border-blue-200 dark:border-blue-800",       icon: null },
-  DOTNET:        { name: ".NET 8",        class: "bg-violet-100 dark:bg-violet-900/40 text-violet-800 dark:text-violet-200 border border-violet-200 dark:border-violet-800", icon: null },
-  ASPNETCORE:    { name: "ASP.NET Core",  class: "bg-violet-100 dark:bg-violet-900/40 text-violet-800 dark:text-violet-200 border border-violet-200 dark:border-violet-800", icon: null },
-  ISO27001:      { name: "ISO 27001",     class: "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800",             icon: null },
-  COBIT2023:     { name: "COBIT 2023",    class: "bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-800", icon: null },
-  RISKMANAGEMENT:{ name: "Risk Mgmt",     class: "bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800", icon: null },
-  GRC:           { name: "GRC Tools",     class: "bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800",       icon: null },
-  IIS:           { name: "IIS",           class: "bg-slate-100 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700", icon: null },
-  NUGET:         { name: "NuGet",         class: "bg-violet-100 dark:bg-violet-900/40 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-800", icon: null },
-  PYTHON:        { name: "Python",        class: "bg-yellow-100 dark:bg-yellow-900/40 text-yellow-800 dark:text-yellow-200 border border-yellow-200 dark:border-yellow-800", icon: null },
-  FASTAPI:       { name: "FastAPI",       class: "bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800",         icon: null },
-  KUBERNETES:    { name: "Kubernetes",    class: "bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800",         icon: null },
-  AWS:           { name: "AWS",           class: "bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-800", icon: null },
+  TYPESCRIPT:    { name: "TypeScript",    class: "bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-200 border border-blue-200 dark:border-blue-800",       icon: TypeScriptIcon },
+  DOTNET:        { name: ".NET 8",        class: "bg-violet-100 dark:bg-violet-900/40 text-violet-800 dark:text-violet-200 border border-violet-200 dark:border-violet-800", icon: DotNetIcon },
+  ASPNETCORE:    { name: "ASP.NET Core",  class: "bg-violet-100 dark:bg-violet-900/40 text-violet-800 dark:text-violet-200 border border-violet-200 dark:border-violet-800", icon: DotNetIcon },
+  ISO27001:      { name: "ISO 27001",     class: "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800",             icon: ShieldCheckIcon },
+  COBIT2023:     { name: "COBIT 2023",    class: "bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-800", icon: BadgeCheckIcon },
+  RISKMANAGEMENT:{ name: "Risk Mgmt",     class: "bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800", icon: WarningIcon },
+  GRC:           { name: "GRC Tools",     class: "bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800",       icon: ClipboardCheckIcon },
+  IIS:           { name: "IIS",           class: "bg-slate-100 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700", icon: ServerIcon },
+  NUGET:         { name: "NuGet",         class: "bg-violet-100 dark:bg-violet-900/40 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-800", icon: NuGetIcon },
+  PYTHON:        { name: "Python",        class: "bg-yellow-100 dark:bg-yellow-900/40 text-yellow-800 dark:text-yellow-200 border border-yellow-200 dark:border-yellow-800", icon: PythonIcon },
+  FASTAPI:       { name: "FastAPI",       class: "bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800",         icon: FastAPIIcon },
+  KUBERNETES:    { name: "Kubernetes",    class: "bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800",         icon: KubernetesIcon },
+  AWS:           { name: "AWS",           class: "bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-800", icon: AWSIcon },
   NEXTJS:        { name: "Next.js",       class: "bg-gray-100 dark:bg-gray-800/60 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700",         icon: NextJSIcon },
-  TERRAFORM:     { name: "Terraform",     class: "bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800", icon: null },
-  LANGGRAPH:     { name: "LangGraph",     class: "bg-lime-100 dark:bg-lime-900/40 text-lime-700 dark:text-lime-300 border border-lime-200 dark:border-lime-800",         icon: null },
-  DOTNET10:      { name: ".NET 10",       class: "bg-violet-100 dark:bg-violet-900/40 text-violet-800 dark:text-violet-200 border border-violet-200 dark:border-violet-800", icon: null },
-  SARIF:         { name: "SARIF",         class: "bg-slate-100 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700", icon: null },
-  DUCKDB:        { name: "DuckDB",        class: "bg-yellow-100 dark:bg-yellow-900/40 text-yellow-800 dark:text-yellow-200 border border-yellow-200 dark:border-yellow-800", icon: null },
-  DBT:           { name: "dbt",           class: "bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-800", icon: null },
-  AIRFLOW:       { name: "Airflow",       class: "bg-sky-100 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800", icon: null },
-  STREAMLIT:     { name: "Streamlit",     class: "bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800", icon: null },
-  RABBITMQ:      { name: "RabbitMQ",      class: "bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-800", icon: null },
-  GO:            { name: "Go",            class: "bg-cyan-100 dark:bg-cyan-900/40 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800", icon: null },
-  OLLAMA:        { name: "Ollama",        class: "bg-gray-100 dark:bg-gray-800/60 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700", icon: null },
-  FORENSICS:     { name: "Digital Forensics", class: "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800", icon: null },
-  WEBGPU:        { name: "WebGPU",        class: "bg-fuchsia-100 dark:bg-fuchsia-900/40 text-fuchsia-700 dark:text-fuchsia-300 border border-fuchsia-200 dark:border-fuchsia-800", icon: null },
+  TERRAFORM:     { name: "Terraform",     class: "bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800", icon: TerraformIcon },
+  LANGGRAPH:     { name: "LangGraph",     class: "bg-lime-100 dark:bg-lime-900/40 text-lime-700 dark:text-lime-300 border border-lime-200 dark:border-lime-800",         icon: LangGraphIcon },
+  DOTNET10:      { name: ".NET 10",       class: "bg-violet-100 dark:bg-violet-900/40 text-violet-800 dark:text-violet-200 border border-violet-200 dark:border-violet-800", icon: DotNetIcon },
+  SARIF:         { name: "SARIF",         class: "bg-slate-100 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700", icon: DocumentReportIcon },
+  DUCKDB:        { name: "DuckDB",        class: "bg-yellow-100 dark:bg-yellow-900/40 text-yellow-800 dark:text-yellow-200 border border-yellow-200 dark:border-yellow-800", icon: DuckDBIcon },
+  DBT:           { name: "dbt",           class: "bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-800", icon: DbtIcon },
+  AIRFLOW:       { name: "Airflow",       class: "bg-sky-100 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800", icon: AirflowIcon },
+  STREAMLIT:     { name: "Streamlit",     class: "bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800", icon: StreamlitIcon },
+  RABBITMQ:      { name: "RabbitMQ",      class: "bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-800", icon: RabbitMQIcon },
+  GO:            { name: "Go",            class: "bg-cyan-100 dark:bg-cyan-900/40 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800", icon: GoIcon },
+  OLLAMA:        { name: "Ollama",        class: "bg-gray-100 dark:bg-gray-800/60 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700", icon: OllamaIcon },
+  FORENSICS:     { name: "Digital Forensics", class: "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800", icon: SearchIcon },
+  WEBGPU:        { name: "WebGPU",        class: "bg-fuchsia-100 dark:bg-fuchsia-900/40 text-fuchsia-700 dark:text-fuchsia-300 border border-fuchsia-200 dark:border-fuchsia-800", icon: WebGPUIcon },
 };
 
 // categories: which tab(s) this project appears under
@@ -384,8 +407,8 @@ const TABS = [
           <div>
             <div class="flex flex-wrap gap-2 mb-5">
               {tags.map((tag) => (
-                <span class={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-medium transition-all duration-300 hover:scale-105 ${tag.class}`}>
-                  {tag.icon && <tag.icon class="w-3.5 h-3.5" />}
+                <span class={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-medium transition-all duration-300 hover:scale-105 [&>svg]:size-4 [&>svg]:shrink-0 ${tag.class}`}>
+                  {tag.icon && <tag.icon />}
                   {tag.name}
                 </span>
               ))}
