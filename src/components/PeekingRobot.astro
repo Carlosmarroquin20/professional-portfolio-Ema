@@ -1,0 +1,43 @@
+<!--
+  Decorative mascot peeking from the right edge of the screen, beside the hero greeting.
+  It is anchored to the top of the page, so it scrolls away with the hero. It only shows from
+  1360px wide, and its width shrinks with the margin beside the 896px hero so it keeps ~32px from the text.
+  The real image only comes from the media-gated <source>, so narrower screens never download it.
+-->
+<picture>
+  <source media="(min-width: 1360px)" srcset="/robot-door.webp" type="image/webp" />
+  <img
+    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+    alt=""
+    aria-hidden="true"
+    width="471"
+    height="720"
+    decoding="async"
+    style="width: min(224px, calc(50vw - 488px))"
+    class="peeking-robot pointer-events-none select-none absolute right-0 top-24 z-0 hidden h-auto min-[1360px]:block"
+  />
+</picture>
+
+<style>
+  .peeking-robot {
+    /* The body is cut where the door edge was; fade its lower end instead of showing the cut. */
+    mask-image: linear-gradient(to bottom, #000 78%, transparent);
+    animation:
+      peek-in 0.9s ease-out 0.4s both,
+      bob 4s ease-in-out 1.3s infinite;
+  }
+
+  @keyframes peek-in {
+    from { transform: translate(100%, 0); }
+    to   { transform: translate(0, 0); }
+  }
+
+  @keyframes bob {
+    0%, 100% { transform: translate(0, 0); }
+    50%      { transform: translate(0, -6px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .peeking-robot { animation: none; }
+  }
+</style>

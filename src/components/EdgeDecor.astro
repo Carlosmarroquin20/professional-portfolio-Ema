@@ -1,0 +1,70 @@
+---
+/*
+  Decorative clay object shown whole near one edge of the screen, beside a section title.
+  Place it inside a `relative` section; it scrolls with that section. Like PeekingRobot it only
+  shows from 1360px wide, and narrower screens never download the image.
+  Its width shrinks with the side margin, so it always keeps at least 32px from the content.
+*/
+interface Props {
+  src: string
+  width: number
+  height: number
+  side: "left" | "right"
+  /** Rendered width in px when the side margin allows it */
+  size?: number
+  /** Tailwind top offset inside the section */
+  top?: string
+  /** Mirror the image so it faces the content */
+  flip?: boolean
+  /** Bob animation offset, so objects on screen together don't move in sync */
+  delay?: string
+}
+
+const { src, width, height, side, size = 160, top = "top-0", flip = false, delay = "0s" } = Astro.props
+// 50vw - 512px is the margin beside the 1024px section; minus the 12px inset and a 32px gap, plus the section's 24px padding.
+const style = `width: min(${size}px, calc(50vw - 532px)); animation-delay: ${delay}`
+---
+
+<picture>
+  <source media="(min-width: 1360px)" srcset={src} type="image/webp" />
+  <img
+    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+    alt=""
+    aria-hidden="true"
+    width={width}
+    height={height}
+    decoding="async"
+    loading="lazy"
+    data-side={side}
+    data-flip={flip ? "" : undefined}
+    style={style}
+    class={`edge-decor pointer-events-none select-none absolute z-0 hidden h-auto min-[1360px]:block ${top}`}
+  />
+</picture>
+
+<style>
+  /* 50% - 50vw is the screen edge measured from the centered section */
+  .edge-decor[data-side="left"] {
+    left: calc(50% - 50vw + 12px);
+  }
+  .edge-decor[data-side="right"] {
+    right: calc(50% - 50vw + 12px);
+  }
+  .edge-decor {
+    --flip: 1;
+    transform: scaleX(var(--flip));
+    animation: edge-bob 5s ease-in-out infinite;
+  }
+  .edge-decor[data-flip] {
+    --flip: -1;
+  }
+
+  @keyframes edge-bob {
+    0%, 100% { transform: translateY(0) scaleX(var(--flip)); }
+    50%      { transform: translateY(-8px) scaleX(var(--flip)); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .edge-decor { animation: none; }
+  }
+</style>

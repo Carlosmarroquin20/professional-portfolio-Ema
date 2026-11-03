@@ -14,13 +14,16 @@ import Hero from "@/components/Hero.astro"
 import TitleSection from "@/components/TitleSection.astro"
 import Certifications from "@/components/Certifications.astro"
 import EnterpriseValue from "@/components/EnterpriseValue.astro"
+import PeekingRobot from "@/components/PeekingRobot.astro"
+import EdgeDecor from "@/components/EdgeDecor.astro"
 ---
 
 <Layout
   title="Emanuel Marroquín — .NET Developer & Seguridad Informática"
   description="Desarrollador de Software .NET con experiencia en sistemas financieros empresariales de alta disponibilidad. Especializado en cloud-native deployment (OpenShift/Kubernetes) y seguridad informática. Disponible para proyectos internacionales."
 >
-  <main class="px-4">
+  <main class="relative px-4 overflow-x-clip">
+    <PeekingRobot />
 
     <!-- Hero -->
     <SectionContainer class="py-14 md:py-32">
@@ -71,7 +74,8 @@ import EnterpriseValue from "@/components/EnterpriseValue.astro"
 
     <div class="space-y-20 md:space-y-28">
 
-      <SectionContainer id="experiencia">
+      <SectionContainer id="experiencia" class="relative">
+        <EdgeDecor src="/decor/laptop.webp" width={543} height={400} side="left" size={176} top="top-2" />
         <TitleSection>
           <Briefcase class="size-8" />
           <span class="i18n-es">Experiencia laboral</span><span class="i18n-en">Work Experience</span>
@@ -79,7 +83,8 @@ import EnterpriseValue from "@/components/EnterpriseValue.astro"
         <Experience />
       </SectionContainer>
 
-      <SectionContainer id="proyectos">
+      <SectionContainer id="proyectos" class="relative">
+        <EdgeDecor src="/decor/rocket.webp" width={364} height={400} side="right" size={144} flip delay="-1.5s" />
         <TitleSection>
           <CodeIcon class="size-7" />
           <span class="i18n-es">Proyectos</span><span class="i18n-en">Projects</span>
@@ -87,7 +92,8 @@ import EnterpriseValue from "@/components/EnterpriseValue.astro"
         <Projects />
       </SectionContainer>
 
-      <SectionContainer id="skills">
+      <SectionContainer id="skills" class="relative">
+        <EdgeDecor src="/decor/toolbox.webp" width={395} height={400} side="left" size={144} delay="-3s" />
         <TitleSection>
           <CodeIcon class="size-8" />
           <span class="i18n-es">Habilidades Técnicas</span><span class="i18n-en">Technical Skills</span>
@@ -111,7 +117,8 @@ import EnterpriseValue from "@/components/EnterpriseValue.astro"
         <AboutMe />
       </SectionContainer>
 
-      <SectionContainer id="certificaciones">
+      <SectionContainer id="certificaciones" class="relative">
+        <EdgeDecor src="/decor/medal.webp" width={270} height={400} side="right" size={112} delay="-2s" />
         <TitleSection>
           <CodeIcon class="size-7" />
           <span class="i18n-es">Certificaciones y Formación</span><span class="i18n-en">Certifications & Training</span>
@@ -121,7 +128,8 @@ import EnterpriseValue from "@/components/EnterpriseValue.astro"
 
     </div>
 
-    <SectionContainer class="py-12 md:py-20">
+    <SectionContainer class="relative py-12 md:py-20">
+      <EdgeDecor src="/decor/plane.webp" width={544} height={400} side="left" size={176} top="top-16" delay="-4s" />
       <CTA />
     </SectionContainer>
 
