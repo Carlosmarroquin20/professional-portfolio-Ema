@@ -15,7 +15,7 @@
 ## Key File Paths
 - `src/pages/index.astro` — main page, all section wiring
 - `src/components/Hero.astro` — hero with profile badges (.NET, Security, Cloud)
-- `src/components/Skills.astro` — 6-category badge-based skills grid (no progress bars)
+- `src/components/Skills.astro` — 8-category badge-based skills grid (no progress bars)
 - `src/components/Projects.astro` — 8 projects total; supports no-image placeholder + badge label
 - `src/components/EnterpriseValue.astro` — "Lo que aporto" section (new, 6 value props)
 - `src/components/Certifications.astro` — supports no-image entries with gradient placeholder
@@ -29,7 +29,7 @@
 Experiencia | Proyectos | Skills | Mi Valor | Sobre mí | Contacto
 
 ## Design Patterns
-- Skills: badge/tag grid, 6 categories with color themes (violet=.NET, blue=frontend, cyan=cloud, red=security, green=DB, amber=methodology)
+- Skills: badge/tag grid, 8 categories in pairs for the 2-column grid, with color themes (violet=.NET & backend, blue=frontend, cyan=cloud, teal=testing, yellow=AI, green=data & DB, red=security, amber=methodology); items come from the repos' dependencies and the CV. The owner wants 8 cards with about 12 items at most each, only the most relevant ones
 - Projects: `image || placeholderGradient` pattern — academic projects use gradient + SVG icon
 - Project badges: amber pill with 🎓 emoji for academic projects
 - All tags in Projects.astro support `icon: null` (renders text-only tag)
