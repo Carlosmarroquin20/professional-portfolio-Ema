@@ -89,6 +89,13 @@ const PROJECTS = [
     descriptionEn: "Production-grade RAG API where security is the architecture, not a checklist. Every query passes through a Security Gateway before retrieval and every answer through an Output Sanitizer against indirect prompt-injection. Gateway measured against a 326-query corpus, multi-tenancy with per-tenant limits, hexagonal architecture, logs, metrics and traces, and signed images with an SBOM.",
     link:   "https://carlosmarroquin20.github.io/Aegis-RAG/",
     github: "https://github.com/Carlosmarroquin20/Aegis-RAG",
+    demo: {
+      url:     "https://carlosmarroquin20.github.io/Aegis-RAG/playground/",
+      labelEs: "Intenta romper el gateway",
+      labelEn: "Try to break the gateway",
+      descriptionEs: "Prueba en tu navegador el SecurityGateway real: lánzale prompt injection, incluso con trucos de evasión, y mira si lo bloquea. Es solo la primera capa de defensa y nada sale de tu navegador.",
+      descriptionEn: "Try the real SecurityGateway in your browser: throw prompt injection at it, evasion tricks included, and see whether it blocks it. It is only the first layer of defense, and nothing leaves your browser.",
+    },
     image:  "/projects/aegis-rag.webp",
     badge:  null, badgeEn: null,
     placeholderGradient: "from-emerald-500/20 via-teal-500/10 to-emerald-600/20 dark:from-emerald-500/30 dark:via-teal-500/20 dark:to-emerald-600/30",
@@ -350,12 +357,13 @@ const TABS = [
 
 <!-- Project cards -->
 <div class="grid gap-10 sm:gap-14" id="projects-grid">
-  {PROJECTS.map(({ image, title, titleEn, description, descriptionEn, tags, link, github, badge, badgeEn, placeholderGradient, placeholderIcon, categories }) => (
+  {PROJECTS.map(({ image, title, titleEn, description, descriptionEn, tags, link, github, demo, badge, badgeEn, placeholderGradient, placeholderIcon, categories }) => (
     <article
       class="project-card group"
       data-categories={categories.join(" ")}
     >
-      <div class="grid gap-6 md:grid-cols-2 md:gap-8">
+      <!-- Image and text are centered vertically on each other, so neither side leaves a gap when the other is taller. -->
+      <div class="grid gap-6 md:grid-cols-2 md:gap-8 md:items-center">
 
         <!-- Image or gradient placeholder -->
         <div class="relative flex flex-col items-center overflow-hidden rounded-2xl shadow-lg transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-1 border border-gray-200/50 dark:border-gray-800/50 group-hover:border-blue-300 dark:group-hover:border-blue-800">
@@ -388,7 +396,7 @@ const TABS = [
         </div>
 
         <!-- Content -->
-        <div class="flex flex-col justify-between">
+        <div class="flex flex-col">
           <div>
             {(badge || badgeEn) && (
               <div class="mb-3">
@@ -402,6 +410,18 @@ const TABS = [
             </h3>
             <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-5 text-sm sm:text-base i18n-es-block">{description}</p>
             <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-5 text-sm sm:text-base i18n-en-block">{descriptionEn}</p>
+
+            {demo && (
+              <div class="mb-5 rounded-xl border border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-900/20 p-4">
+                <p class="i18n-es-block text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-3">{demo.descriptionEs}</p>
+                <p class="i18n-en-block text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-3">{demo.descriptionEn}</p>
+                <LinkButton href={demo.url}>
+                  <svg class="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span class="i18n-es">{demo.labelEs}</span>
+                  <span class="i18n-en">{demo.labelEn}</span>
+                </LinkButton>
+              </div>
+            )}
           </div>
 
           <div>
