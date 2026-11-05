@@ -11,7 +11,8 @@ const CERTIFICATIONS = [
     badgeEs: "En curso",
     badgeEn: "In progress",
     badgeClass: "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-700",
-    tags: ["ISO 27001", "COBIT 2023", "OWASP", "Pentesting", "Auditoría"],
+    // A tag is a plain string when it reads the same in both languages, or { es, en } when it does not.
+    tags: ["ISO 27001", "COBIT 2023", "OWASP", "Pentesting", { es: "Auditoría", en: "Auditing" }],
   },
   {
     titleEs: "Certificación en SCRUM",
@@ -101,7 +102,12 @@ const CERTIFICATIONS = [
           <div class="flex flex-wrap gap-1.5 pt-1">
             {tags.map((tag) => (
               <span class="text-xs px-2 py-0.5 rounded-md bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-600">
-                {tag}
+                {typeof tag === "string" ? tag : (
+                  <>
+                    <span class="i18n-es">{tag.es}</span>
+                    <span class="i18n-en">{tag.en}</span>
+                  </>
+                )}
               </span>
             ))}
           </div>
