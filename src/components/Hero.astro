@@ -1,6 +1,7 @@
 ---
 const personalImageAlt = "Emanuel Marroquín";
 import Badge from "@/components/Badge.astro";
+import GitHubIcon from "@/components/icons/GitHub.astro";
 import LinkedInIcon from "@/components/icons/LinkedIn.astro";
 import MailIcon from "@/components/icons/Mail.astro";
 import SocialPill from "@/components/SocialPill.astro";
@@ -78,6 +79,10 @@ const hasCvEn = existsSync(join(process.cwd(), "public", CV_EN));
       <SocialPill href="https://www.linkedin.com/in/emanuel-marroquin-160488321/">
         <LinkedInIcon class="size-4" />
         LinkedIn
+      </SocialPill>
+      <SocialPill href="https://github.com/Carlosmarroquin20">
+        <GitHubIcon class="size-4" />
+        GitHub
       </SocialPill>
       <!--
         Bilingual CV: the page's language button swaps data-cv-es / data-cv-en through applyLang() in Layout.astro.
