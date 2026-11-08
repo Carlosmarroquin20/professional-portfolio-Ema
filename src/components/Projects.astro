@@ -87,8 +87,10 @@ const PROJECTS = [
     titleEn:     "Aegis-RAG",
     description: "API RAG grado producción donde la seguridad es la arquitectura, no un checklist. Cada consulta pasa por un Security Gateway antes de la recuperación y cada respuesta por un Output Sanitizer contra prompt-injection indirecta. Gateway medido con un corpus de 326 consultas, multi-tenancy con límites por cliente, arquitectura hexagonal, logs, métricas y trazas, e imágenes firmadas con SBOM.",
     descriptionEn: "Production-grade RAG API where security is the architecture, not a checklist. Every query passes through a Security Gateway before retrieval and every answer through an Output Sanitizer against indirect prompt-injection. Gateway measured against a 326-query corpus, multi-tenancy with per-tenant limits, hexagonal architecture, logs, metrics and traces, and signed images with an SBOM.",
-    link:   "https://carlosmarroquin20.github.io/Aegis-RAG/",
+    // The GitHub Pages index only links to the diagram and the playground, which have their own buttons.
+    link:   "",
     github: "https://github.com/Carlosmarroquin20/Aegis-RAG",
+    architecture: "https://carlosmarroquin20.github.io/Aegis-RAG/aegis-architecture.html",
     demo: {
       url:     "https://carlosmarroquin20.github.io/Aegis-RAG/playground/",
       labelEs: "Intenta romper el gateway",
@@ -119,8 +121,8 @@ const PROJECTS = [
   {
     title:       "CodeSentinel",
     titleEn:     "CodeSentinel",
-    description: "Escáner de seguridad para repositorios de código, locales o remotos: detecta secretos expuestos y patrones inseguros con 12 reglas, y asigna un puntaje accionable en code review y CI/CD. Reportes en JSON, HTML y SARIF para GitHub code scanning. Construido desde cero en .NET 10 con reglas como plugins; se distribuye como .NET global tool e imagen Docker.",
-    descriptionEn: "Security scanner for local or remote source code repositories: detects exposed secrets and insecure patterns with 12 rules, producing an actionable score for code review and CI/CD. Reports in JSON, HTML and SARIF for GitHub code scanning. Built from scratch on .NET 10 with plugin-based rules; ships as a .NET global tool and a Docker image.",
+    description: "Escáner de seguridad para repositorios de código, locales o remotos: detecta secretos expuestos y patrones inseguros con 12 reglas, y asigna un puntaje accionable en code review y CI/CD. Reportes en JSON, HTML y SARIF para GitHub code scanning. Construido desde cero en .NET 10 con reglas como plugins; se distribuye como .NET global tool e imagen Docker, e incluye un servidor MCP para que asistentes de IA como Claude Code escaneen y expliquen hallazgos sin ver los secretos.",
+    descriptionEn: "Security scanner for local or remote source code repositories: detects exposed secrets and insecure patterns with 12 rules, producing an actionable score for code review and CI/CD. Reports in JSON, HTML and SARIF for GitHub code scanning. Built from scratch on .NET 10 with plugin-based rules; ships as a .NET global tool and a Docker image, plus an MCP server so AI assistants such as Claude Code can scan and explain findings without seeing the secrets.",
     link:   "",
     github: "https://github.com/Carlosmarroquin20/CodeSentinel",
     image:  "/projects/codesentinel.webp",
@@ -165,6 +167,7 @@ const PROJECTS = [
     descriptionEn: "MLOps platform for serving language models on Kubernetes with high availability. KEDA autoscaling on real load, asynchronous jobs over RabbitMQ and Redis that scale from zero, swappable backends with automatic fallback (local GGUF or external APIs), evals that gate CI, and observability with Prometheus, Grafana and OpenTelemetry.",
     link:   "",
     github: "https://github.com/Carlosmarroquin20/Vortex-Inference",
+    architecture: "https://carlosmarroquin20.github.io/Vortex-Inference/vortex-architecture.html",
     image:  "/projects/vortex-inference.webp",
     badge:  null, badgeEn: null,
     placeholderGradient: "from-sky-500/20 via-blue-500/10 to-sky-600/20 dark:from-sky-500/30 dark:via-blue-500/20 dark:to-sky-600/30",
@@ -357,7 +360,7 @@ const TABS = [
 
 <!-- Project cards -->
 <div class="grid gap-10 sm:gap-14" id="projects-grid">
-  {PROJECTS.map(({ image, title, titleEn, description, descriptionEn, tags, link, github, demo, badge, badgeEn, placeholderGradient, placeholderIcon, categories }) => (
+  {PROJECTS.map(({ image, title, titleEn, description, descriptionEn, tags, link, github, architecture, demo, badge, badgeEn, placeholderGradient, placeholderIcon, categories }) => (
     <article
       class="project-card group"
       data-categories={categories.join(" ")}
@@ -447,6 +450,13 @@ const TABS = [
                   <Link class="size-4" />
                   <span class="i18n-es">Ver proyecto</span>
                   <span class="i18n-en">View project</span>
+                </LinkButton>
+              )}
+              {architecture && (
+                <LinkButton href={architecture}>
+                  <svg class="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm10 0a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM9 19a1 1 0 011-1h4a1 1 0 011 1v0a1 1 0 01-1 1h-4a1 1 0 01-1-1zM7 10v3a2 2 0 002 2h6a2 2 0 002-2v-3M12 15v3"/></svg>
+                  <span class="i18n-es">Ver arquitectura</span>
+                  <span class="i18n-en">View architecture</span>
                 </LinkButton>
               )}
             </div>
